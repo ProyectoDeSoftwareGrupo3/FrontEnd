@@ -1,6 +1,6 @@
 :root {
-    --primary: #F4BD50;
-    --background: #191919;
+    --primary: #e6bbb4;
+    --background: #786c6c;
     --navbar-height: 48px;
 }
 
@@ -182,8 +182,7 @@
 
 
 :root {
-    --primary: #F4BD50;
-    --background: #191919;
+    /* --primary: #F4BD50; */
     --navbar-height: 48px;
 }
 
@@ -369,7 +368,7 @@
     --github-dark-lighter: #0D1117;
     --github-dark-border: #30363D;
     --github-button-hover: #8B949E;
-    --background: #171B20;
+    
     --color: #828B94;
     --github: #C9D1D9;
     --navigation-hover: #292F36;
@@ -398,8 +397,8 @@ body {
     gap: 1.5rem;
     background-color: var(--github-dark);
     height: var(--navbar-height);
-    padding: 0px 1rem;
-    border-bottom: 1px solid var(--github-dark-border);
+    /* padding: 0px 1rem; */
+    /* border-bottom: 1px solid var(--github-dark-border); */
     align-items: center;
 }
 

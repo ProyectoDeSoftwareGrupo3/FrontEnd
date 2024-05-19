@@ -1,15 +1,16 @@
 
 :root {
-    --primary: #5138EE;
-    --primary-disabled: #9383F5;
-    --primary-lighter: #806DF3;
+    --primary: #6F6666;
+    --primary-disabled: #9E9595;
+    --primary-lighter: #e5e3e3;
+    --error: #df4b43 ;
+    --background: #f9f6f3;
+
     --secondary: #D4D7DE;
     --text: #17222A;
     --text-gray: #687076;
     --border: #F0F3F5;
     --btn-bg: #EDEDED;
-    --background: #F8F8FF;
-    --error: #e5484d;
 }
 
 html {
