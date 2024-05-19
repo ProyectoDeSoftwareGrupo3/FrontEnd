@@ -20,3 +20,24 @@ const toggleMenu = () => {
         navigation.classList.toggle("navigation--mobile");
     }
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    const authLink = document.getElementById('auth-link');
+    const token = localStorage.getItem('authToken'); // Asegúrate de que 'token' es la clave que usas
+
+    if (token) {
+        authLink.innerHTML = '<img id="avatar-navbar" class="avatar-profile" src="assets/profile_new.jpg" alt="Profile">';
+    } else {
+        authLink.innerHTML = '<a title="Inicia sesión" href="/login">Inicia sesión </a>';
+    }
+
+    // Agregar el evento de cerrar sesión si el token existe
+    const logoutLink = document.getElementById('logout');
+    if (logoutLink) {
+        logoutLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('token'); // Elimina el token
+            window.location.href = 'login.html'; // Redirige a la página de inicio de sesión
+        });
+    }
+});
