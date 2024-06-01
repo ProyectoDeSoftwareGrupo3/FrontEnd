@@ -1,0 +1,162 @@
+/* Custom styles for Proyecto 4 Patas */
+:root {
+  --primary: #FFEBE0;
+  --secondary: #FFFFFF;
+  --terciary: #384861;
+  --cuartiary: #CC8E22;
+  --quintary: #39ABA0;
+}
+
+
+body {
+  font-family: Barlow, Sans-serif;
+}
+
+.navbar-nav {
+  flex: 1;
+  justify-content: center;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.donaciones-section,
+.instagram-section {
+  background-color: var(--primary);
+  padding: 60px 0;
+}
+
+.conocenos-section,
+.adopta-section {
+  background-color: var(--secondary);
+  padding: 60px 0;
+}
+
+.conocenos-section img,
+.donacion-item img,
+.adopta-section img {
+  border-radius: 50%;
+  max-width: 518px;
+}
+
+.donacion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rounded-button {
+  border-radius: 50px;
+  /* Puedes ajustar este valor según el redondeo deseado */
+  padding: 10px 20px;
+  /* Opcional: para ajustar el tamaño del botón */
+}
+
+.btn-dona {
+  font-size: 33px;
+  font-weight: 400;
+  color: #fff;
+  background-color: var(--terciary);
+  border-color: var(--terciary);
+  font-family: "Barlow", Sans-serif;
+  font-style: normal;
+}
+
+.btn-insumos {
+  font-size: 33px;
+  font-weight: 400;
+  color: #fff;
+  background-color: var(--cuartiary);
+  border-color: var(--cuartiary);
+  font-family: "Barlow", Sans-serif;
+  font-style: normal;
+}
+
+.btn-vermas {
+  font-weight: 400;
+  color: #fff;
+  background-color: var(--terciary);
+  border-color: var(--terciary);
+  font-family: "Barlow", Sans-serif;
+  font-style: normal;
+}
+
+footer {
+  background-color: var(--terciary);
+  padding: 20px 0;
+}
+
+footer h5 {
+  color: #fff;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .form-control {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+footer .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+footer .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+h2 {
+  font-family: "Barlow", Sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--terciary);
+}
+
+.carousel-inner {
+  height: 600px;
+  /* Ajusta esta altura según tus necesidades */
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-image {
+  height: 100%;
+  object-fit: cover;
+  /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--terciary);
+}
+.nav-link {
+  font-family: "Raleway", Sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--quintary);
+}
+
+footer .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
