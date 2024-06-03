@@ -1,0 +1,133 @@
+/* Custom styles for Proyecto 4 Patas */
+:root {
+    --primary: #FFEBE0;
+    --secondary: #FFFFFF;
+    --terciary: #384861;
+    --cuartiary: #CC8E22;
+    --quintary: #39ABA0;
+}
+
+body {
+    font-family: Barlow, Sans-serif;
+}
+main
+{
+    background-color: var(--secondary);
+}
+
+.row
+{
+    padding: 10px;
+}
+
+.form-container
+{
+    border-radius: 10px;
+    padding: 10px;   
+    background-color: var(--primary);
+    box-shadow: 0px 0px 6px gray;
+}
+
+.form-box
+{   
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--primary);    
+    box-shadow: 0px 0px 2px gray;
+}
+
+.form-header
+{
+    display: flex;
+    justify-content: center;
+}
+
+form
+{
+    display: flex;
+}
+label
+{
+    margin-bottom: 10px;
+}
+
+.longTextBox
+{
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+}
+.shortTextBox
+{
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+
+
+.submit-button
+{
+    background-color: var(--terciary);
+    margin-top: 10px;
+    border-radius: 50px;
+    border: none;
+}
+.submit-button:hover
+{
+    background-color: var(--secondary);
+    color: black;
+}
+option
+{
+    border-radius: 50px;
+}
+
+.form-group
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Copied things */
+
+.navbar-nav {
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--terciary);
+}
+.nav-link {
+    font-family: "Raleway", Sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--quintary);
+}
+
+.rounded-button {
+    border-radius: 50px;
+    /* Puedes ajustar este valor según el redondeo deseado */
+    padding: 10px 20px;
+    /* Opcional: para ajustar el tamaño del botón */
+}
+
+.btn-vermas {
+    font-weight: 400;
+    color: #fff;
+    background-color: var(--terciary);
+    border-color: var(--terciary);
+    font-family: "Barlow", Sans-serif;
+    font-style: normal;
+}
+h2 {
+    font-family: "Barlow", Sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--terciary);
+}
