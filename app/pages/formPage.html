@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet"
+    />
+
+    <script
+        src="https://kit.fontawesome.com/09483aa2b8.js"
+        crossorigin="anonymous"
+    ></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Barlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRaleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=0055d1cb097aee760dbaaa7857abfcdd" media="all">
+    <link rel="stylesheet" href="/styles/FormPage.css">
+    <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="/styles/main.css"
+  />
+  <script src="/form.js"></script>
+</head>
+<body>    
+    <header>
+       <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/assets/logo.png" alt="Logo" style="width: 40px" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/#conocenos">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/animalList">Adoptá</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#">Salvá vidas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#adopta">Participá</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#">Tienda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#donaciones">Donaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#footer">Contacto</a>
+            </li>
+          </ul>
+          <a href="/login">
+          <button class="btn btn-vermas rounded-button my-2 my-sm-0" type="button">
+            Login
+          </button>
+        </a>
+        </div>
+      </nav>
+    </header>
+    <main class="container form-wrapper">
+        <section class="row">
+            <section class="col-8 offset-2">
+                <section class="form-container">
+                    <section class="form-box">
+                        <section class="form-header">
+                            <h2>Adopcion</h2>
+                        </section>                       
+                        <section>
+                            <form action="" class="row">
+                                <div class="form-group col-6">
+                                    <label for="Personas">Cuantas personas hay en tu hogar?</label>
+                                    <select name="Personas" class="form-select" aria-label="Default select example">                                        
+                                        <option selected value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-2">
+                                    <label for="Ninos">Hay niños?</label>
+                                    <select name="Ninos" class="form-select" aria-label="Default select example" id="Ninos">                                        
+                                        <option selected value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div> 
+                                <div class="form-group col-4">
+                                    <label for="Ninos">Cuales son sus edades?</label>
+                                    <select name="Ninos" class="form-select" aria-label="Default select example" id="NinosEdad" disabled>                                        
+                                        <option selected value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group row col-4">
+                                    <p>¿Hay otros animales?</p>
+                                    <div class="form-check offset-1">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="animalSi" >
+                                        <label class="form-check-label" for="animalSi">
+                                        SI
+                                        </label>
+                                    </div>
+                                    <div class="form-check offset-1">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="animalNo" checked>
+                                        <label class="form-check-label" for="animalNo">
+                                        NO
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-4">
+                                    <p>Estan vacunados?</p>
+                                    <div class="form-check offset-1">
+                                        <input class="form-check-input" type="radio" name="vacunado" id="vacunadoSi" disabled>
+                                        <label class="form-check-label" for="vacunadoSi">
+                                        SI
+                                        </label>
+                                    </div>
+                                    <div class="form-check offset-1">
+                                        <input class="form-check-input" type="radio" name="vacunado" id="vacunadoNo" disabled>
+                                        <label class="form-check-label" for="vacunadoNo">
+                                        NO
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row col-4">
+                                    <p>Estan castrados?</p>
+                                    <div class="form-check offset-1">
+                                        <input class="form-check-input" type="radio" name="castrado" id="castradoSi" disabled>
+                                        <label class="form-check-label" for="castradoSi">
+                                        SI
+                                        </label>
+                                    </div>
+                                    <div class="form-check offset-1">
+                                        <input class="form-check-input" type="radio" name="castrado" id="castradoNo" disabled>
+                                        <label class="form-check-label" for="castradoNo">
+                                        NO
+                                        </label>
+                                    </div>
+                                </div>                      
+                                <div class="form-group col-6">
+                                    <label for="Lugar">Donde vivira el animal adoptado?</label>
+                                    <select name="Lugar" class="form-select" aria-label="Default select example">                                        
+                                        <option selected value="Casa">Casa</option>
+                                        <option value="Departamento">Departamento</option>
+                                        <option value="Casa quinta">Casa quinta</option>
+                                        <option value="Granja">Granja</option>
+                                    </select>
+                                </div>      
+                                <div class="form-group col-6">
+                                    <label for="ProOInq">Propietario o inquilino?</label>
+                                    <select name="ProOInq" class="form-select" aria-label="Default select example">                                        
+                                        <option selected value="Propietario">Propietario</option>
+                                        <option value="Inquilino">Inquilino</option>
+                                    </select>
+                                </div>       
+                                <div class="form-group col-6">
+                                    <label for="EspacioLibre">Posees un espacio al aire libre?</label>
+                                    <select name="EspacioLibre" class="form-select" aria-label="Default select example">                                        
+                                        <option selected value="Patio">Patio</option>
+                                        <option value="Terraza">Terraza</option>
+                                        <option value="Balcon">Balcon</option>
+                                        <option value="Ninguno">Ninguno</option>
+                                    </select>
+                                </div>  
+                                <div class="form-group col-6">
+                                    <label for="Razon">Por que queres adoptar el animal?</label>
+                                    <select name="Razon" class="form-select" aria-label="Default select example">                                        
+                                        <option selected value="Compania">Compañia</option>
+                                        <option value="Seguridad">Seguridad</option>
+                                        <option value="Trabajo">Trabajo</option>
+                                    </select>
+                                </div>    
+                                <div class="form-group col-6">
+                                    <label for="HorasSolo">¿Cuántas horas estimas que el animal estará solo en la propiedad?</label>
+                                    <select name="HorasSolo" class="form-select" aria-label="Default select example">                                        
+                                        <option selected value="0">0 Horas</option>
+                                        <option value="1">1 Hora</option>
+                                        <option value="2">2 Horas</option>
+                                        <option value="3">3 Horas</option>
+                                        <option value="4">4 Horas</option>
+                                        <option value="5">5 Horas</option>
+                                        <option value="6">6 Horas</option>
+                                        <option value="7">7 Horas</option>
+                                        <option value="8">8 Horas</option>
+                                        <option value="9">9 Horas</option>
+                                        <option value="10">10 Horas</option>
+                                        <option value="11">11 Horas</option>
+                                        <option value="12">12 Horas</option>
+                                        <option value="99">Mas de 12 horas</option>
+                                    </select>
+                                </div>   
+                                <div class="form-group col-6">
+                                    <label for="Paseo">Cuantas veces podras sacarlo a pasear por dia?</label>
+                                    <select name="Paseo" class="form-select" aria-label="Default select example">                                        
+                                        <option selected value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>                                        
+                                    </select>
+                                </div>                                                          
+                                <button type="button" class="btn btn-primary submit-button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Enviar</button>                               
+                            </form>
+                            <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Información</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Formulario enviado!!!</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+                        </section>                        
+                    </section>
+                </section>                
+            </section>
+        </section>    
+        
+        
+    </main>
+     <!-- Footer -->
+  <footer class="text-white text-center text-lg-start py-2" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <img src="/assets/logo.png" alt="Proyecto 4 Patas" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Enlaces</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Nosotros</a></li>
+            <li><a href="#" class="text-white">Adoptá</a></li>
+            <li><a href="#" class="text-white">Salvá vidas</a></li>
+            <li><a href="#" class="text-white">Participá</a></li>
+            <li><a href="#" class="text-white">Tienda</a></li>
+            <li><a href="#" class="text-white">Donaciones</a></li>
+            <li><a href="#" class="text-white">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Suscribite</h5>
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Ingresá tu e-mail">
+            </div>
+            <button type="submit" class="btn btn-vermas rounded-button">¡Suscribirme!</button>
+          </form>
+        </div>
+      </div>
+      <div class="text-center">
+        <p>&copy; 2024 Proyecto Puppy Tech | Proyecto de Software</p>
+      </div>
+   </footer>
+    
+</body>
+</html>

@@ -18,3 +18,5 @@ app.use(express.json());
 //Rutas
 app.get("/", (req,res)=> res.sendFile(__dirname + "/pages/index.html"));
 app.get("/login",(req,res)=> res.sendFile(__dirname + "/pages/login.html"));
+app.get("/animalLIst",(req,res)=> res.sendFile(__dirname + "/pages/animalList.html"));
+app.get("/formPage",(req,res)=> res.sendFile(__dirname + "/pages/formPage.html"));

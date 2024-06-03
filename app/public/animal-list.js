@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showLessAnimals();
   });
 
-
   document.getElementById('search-box').addEventListener('input', debounce(() => {
     loadAnimals();
   }, 50));
@@ -79,7 +78,7 @@ function renderAnimals(animals) {
     const card = document.createElement('div');
     card.classList.add('col-lg-4', 'mb-4', 'd-flex', 'fade-in'); // Add fade-in class for animation
     card.innerHTML = `
-      <div class="card border-0 flex-fill d-flex flex-column">
+      <div class="card border-0 flex-fill d-flex flex-column" type="button" id="animal-card" data-animal='${JSON.stringify(animal)}'>
         <div class="card-header position-relative border-0 p-0 mb-4 image-container">
           <img src="${animal.media[0]?.url || 'default-image.jpg'}" class="animal-image" alt="${animal.nombre}" />
           <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"></div>
@@ -96,11 +95,21 @@ function renderAnimals(animals) {
               <i class="text-secondary mr-2"></i> ${animal.historia}
             </li>
           </ul>
-          <button class="btn btn-outline-primary mt-auto">Ver detalles</button>
+          
         </div>
       </div>
     `;
+
     container.appendChild(card);
+
+    
+    
+  });
+  document.querySelectorAll('#animal-card').forEach(card => {
+    card.addEventListener('click', (event) => {
+      const animalData = JSON.parse(card.getAttribute('data-animal'));
+      showAnimalDetails(animalData);
+    });
   });
 }
 
@@ -117,4 +126,74 @@ function scrollUp() {
     top: -1500, 
     behavior: 'smooth'
   });
+}
+
+function toggleFilters() {
+  var filtersContainer = document.getElementById('filters-container');
+  if (filtersContainer.style.display === 'none' || filtersContainer.style.display === '') {
+    filtersContainer.style.display = 'block';
+  } else {
+    filtersContainer.style.display = 'none';
+  }
+}
+
+function applyFilters() {
+  const weight = document.getElementById('weight-filter').value;
+  const age = document.getElementById('age-filter').value;
+  const gender = document.getElementById('gender-filter').value;
+  const type = document.getElementById('type-filter').value;
+
+
+  const searchQuery = document.getElementById('search-box').value;
+
+  let url = `${apiUrl}?nombre=${searchQuery}`;
+
+  if (weight) url += `&peso=${weight}`;
+  if (age) url += `&edad=${age}`;
+  if (gender !== '') url += `&genero=${gender === 'macho' ? 'true' : 'false'}`;
+  if (type !== '') url += `&tipoId=${type  === 'perro' ? 1 : 2}`;
+
+  const loader = document.getElementById('loader');
+  const noResults = document.getElementById('no-results');
+  
+  loader.style.display = 'block'; 
+  noResults.style.display = 'none'; 
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      allAnimals = data;
+      currentPage = 1;
+      displayedAnimals = allAnimals.slice(0, itemsPerPage);
+      renderAnimals(displayedAnimals);
+      loader.style.display = 'none';
+
+      if (allAnimals.length === 0) {
+        noResults.style.display = 'block';
+      }
+
+      document.getElementById('load-more-btn').style.display = allAnimals.length > itemsPerPage ? 'inline-block' : 'none';
+      document.getElementById('show-less-btn').style.display = 'none';
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      loader.style.display = 'none'; 
+    });
+}
+
+function showAnimalDetails(animal) {
+  const url = `${apiUrl}/${animal.id}`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('animal-name').textContent = data.nombre;
+      document.getElementById('animal-age').textContent = data.edad;
+      document.getElementById('animal-gender').textContent = data.genero ? 'Macho' : 'Hembra';
+      document.getElementById('animal-image').src = data.media[0]?.url || 'default-image.jpg';
+      document.getElementById('animal-history').textContent = data.historia;
+
+      const modal = new bootstrap.Modal(document.getElementById('animalDetailsModal'));
+      modal.show();
+    })
+    .catch(error => console.error('Error fetching animal details:', error));
 }

@@ -1,615 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-      rel="stylesheet"
-    />
-
-    <script
-      src="https://kit.fontawesome.com/09483aa2b8.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Puppy Tech</title>
     <link
       rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Barlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRaleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=0055d1cb097aee760dbaaa7857abfcdd" media="all">
     <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="/styles/main.css"
-    />
-    <script src="/main.js"></script>
-    <script src="/animal-list.js"></script>
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="/styles/main.css"
+  />
   </head>
-
   <body>
-    <div class="menu__wrapper">
-      <div class="menu__bar">
-        <a href="#" title="Logo" class="logo">
-          <svg
-            width="1103"
-            height="996"
-            viewBox="0 0 1103 996"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M410.988 255.56L0 995.337H189.802L505.141 427.427L410.988 255.56ZM1102.94 995.337L647.119 170.373L551.471 0L457.317 170.373L551.471 340.746L711.79 629.718H498.683L405.461 786.972H799.034L914.634 995.337H1102.94Z"
-              fill="#FAFBFC"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M410.988 255.56L0 995.337H189.802L505.141 427.427L410.988 255.56ZM1102.94 995.337L647.119 170.373L551.471 0L457.317 170.373L551.471 340.746L711.79 629.718H498.683L405.461 786.972H799.034L914.634 995.337H1102.94Z"
-              fill="#FAFBFC"
-            />
-          </svg>
-        </a>
-        <img
-          class="menu-icon"
-          src="assets/burger-menu.svg"
-          title="Burger Menu"
-          alt="Burger Menu"
-          onclick="toggleMenu(this)"
-        />
-        <ul class="navigation">
-          <li>
-            <a href="#requisitos" title="Requisitos"> Requisitos </a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/logo.png" alt="Logo" style="width: 40px" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#conocenos">Nosotros</a>
           </li>
-          <li>
-            <a href="#preguntas" title="Preguntas"> Preguntas </a>
+          <li class="nav-item">
+            <a class="nav-link" href="/animalList">Adoptá</a>
           </li>
-          <li>
-            <a href="#animal-list" title="Adoptar"> Adoptar </a>
-          </li>   
-          <li class="action-buttons" id="auth-link"></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Salvá vidas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#adopta">Participá</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tienda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#donaciones">Donaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Contacto</a>
+          </li>
         </ul>
+        <a href="/login">
+        <button class="btn btn-vermas rounded-button my-2 my-sm-0" type="button">
+          Login
+        </button>
+      </a>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100 carousel-image" src="https://proyecto4patas.org/wp-content/uploads/2023/11/miel--scaled.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Dona</h5>
+          <p>Con su ayuda nos das la posibilidad de seguir rescatando animales en situación de riesgo.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 carousel-image" src="https://proyecto4patas.org/wp-content/uploads/2023/11/IMG_6493-scaled.jpg" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Conocenos</h5>
+          <p>Somos un equipo de personas impulsadas por la empatía hacia los animales.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 carousel-image" src="https://proyecto4patas.org/wp-content/uploads/2023/11/MG_7381-scaled.jpg" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Adoptá</h5>
+          <p>Evalúa el espacio disponible en tu hogar y el tiempo que puedes dedicar.</p>
+        </div>
       </div>
     </div>
-    <body class="body">
-      <div class="container-fluid p-0">
-        <div class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="https://scontent.feze12-1.fna.fbcdn.net/v/t39.30808-6/325601350_744817380398332_1476677360856882417_n.png?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=_7Mr8IcGLyMQ7kNvgGKN0VD&_nc_ht=scontent.feze12-1.fna&oh=00_AYAVcidWJEYGqc1s3HeSDp6N3zbgsM5VxRGLfeFGSZe3CA&oe=66502901"
-                class="w-100"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
-      <div class="container-fluid bg-light">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col py-5 py-lg-0 px-3 px-lg-5">
-              <h1>ANTES DE ADOPTAR</h1>
-              <p>Adoptá con conciencia y corazón.</p>
-              <div class="d-flex flex-column">
-                <p>
-                  Al pensar en adoptar, es crucial tener en cuenta diversos
-                  factores para garantizar una convivencia armoniosa. Evalúa el
-                  espacio disponible en tu hogar, el tiempo que puedes dedicar
-                  al juego y paseo, así como los costos asociados con la
-                  alimentación, atención veterinaria y cuidado durante las
-                  vacaciones. Asegúrate de que tu elección de mascota se ajuste
-                  a tu estilo de vida y a la cantidad de tiempo que puedes
-                  comprometer. Es importante recordar que un animal de compañía
-                  puede tener una vida promedio de entre 14 y 18 años, y durante
-                  todo ese tiempo dependerá de vos. Adoptar implica asumir la
-                  responsabilidad de su bienestar y felicidad a lo largo de su
-                  vida.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row d-flex container">
-            <div class="col-lg-3 mb-4 d-flex">
-              <div class="card border-0 flex-fill d-flex flex-column">
-                <div class="card-header position-relative border-0 p-0 mb-4">
-                  <img
-                    src="https://proyecto4patas.org/wp-content/uploads/2023/12/cachorro.png"
-                    class="card-img-top"
-                    alt=""
-                  />
-                  <div
-                    class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"
-                  ></div>
-                </div>
-                <div
-                  class="card-body text-center p-0 flex-fill d-flex flex-column"
-                >
-                  <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item p-2">
-                      <i class="fa fa-heart text-secondary mr-2"></i> CACHORRO
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i> Menos de 1 año
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i>Es adorable y es
-                      gratificante ver su crecimiento hasta la edad adulta pero
-                      demanda tiempo y esfuerzo. Requiere alimentación
-                      frecuente, hace sus necesidades muchas veces por día,
-                      rompe objetos y acostumbra a llorar en las noches si se
-                      queda solo. La paciencia y la educación son esenciales
-                      durante su primer año y no se puede garantizar su tamaño
-                      final.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4 d-flex">
-              <div class="card border-0 flex-fill d-flex flex-column">
-                <div class="card-header position-relative border-0 p-0 mb-4">
-                  <img
-                    src="https://proyecto4patas.org/wp-content/uploads/2023/12/joven.png"
-                    class="card-img-top"
-                    alt=""
-                  />
-                  <div
-                    class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"
-                  ></div>
-                </div>
-                <div
-                  class="card-body text-center p-0 flex-fill d-flex flex-column"
-                >
-                  <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item p-2">
-                      <i class="fa fa-heart text-secondary mr-2"></i> JOVEN
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i>1-5 años
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i>Es juguetón pero más
-                      adulto. Son más hábiles para aprender y adaptarse. Come
-                      dos veces al día. Ya tiene el tamaño definitivo, no
-                      cambiará de aspecto, ya tiene rasgos de personalidad
-                      desarrollados y estará esterilizado.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4 d-flex">
-              <div class="card border-0 flex-fill d-flex flex-column">
-                <div class="card-header position-relative border-0 p-0 mb-4">
-                  <img
-                    src="https://proyecto4patas.org/wp-content/uploads/2023/12/adulto.png"
-                    class="card-img-top"
-                    alt=""
-                  />
-                  <div
-                    class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"
-                  ></div>
-                </div>
-                <div
-                  class="card-body text-center p-0 flex-fill d-flex flex-column"
-                >
-                  <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item p-2">
-                      <i class="fa fa-heart text-secondary mr-2"></i> ADULTO
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i>5-9 años
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i>No genera problemas por
-                      quedarse solo durante períodos razonables de tiempo y son
-                      grandes compañeros. Se adaptan fácilmente a un nuevo
-                      entorno familiar.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4 d-flex">
-              <div class="card border-0 flex-fill d-flex flex-column">
-                <div class="card-header position-relative border-0 p-0 mb-4">
-                  <img
-                    src="https://proyecto4patas.org/wp-content/uploads/2023/12/abuelo.png"
-                    class="card-img-top"
-                    alt=""
-                  />
-                  <div
-                    class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"
-                  ></div>
-                </div>
-                <div
-                  class="card-body text-center p-0 flex-fill d-flex flex-column"
-                >
-                  <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item p-2">
-                      <i class="fa fa-heart text-secondary mr-2"></i> ABUELO
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i>+ de 10 años
-                    </li>
-                    <li class="list-group-item p-2">
-                      <i class="text-secondary mr-2"></i>Nos brinda la ventaja
-                      de disponer de mucho tiempo para nosotros. Suelen ser
-                      tranquilos y sedentarios. Aunque el período de compañía
-                      compartida posiblemente sea más breve, puedes ofrecerles
-                      durante los años que les quedan una vida digna y
-                      agradable. Estos abuelos, que esperaron durante mucho
-                      tiempo un hogar, muestran una gratitud sincera y son pura
-                      entrega.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="container py-3" id="requisitos">
-        <div class="row py-5">
-          <div class="col-lg-7 pb-5 pb-lg-0 px-3 px-lg-5">
-            <h1 class="display-6 mb-4">
-              <span class="text-primary"
-                >¿CON GANAS DE SUMAR UN INTEGRANTE A TU FAMILIA?</span
-              >
-            </h1>
-            <h5 class="text-muted mb-3">REQUISITOS PARA ADOPTAR</h5>
-            <ul class="list-inline">
-              <li>
-                <h5>
-                  <i
-                    class="fa fa-check text-secondary mr-3"
-                    aria-hidden="true"
-                  ></i
-                  >Ser mayor de 21 años.
-                </h5>
-              </li>
-              <li>
-                <h5>
-                  <i
-                    class="fa fa-check text-secondary mr-3"
-                    aria-hidden="true"
-                  ></i
-                  >Amar a las mascotas y poder dedicarle el tiempo que necesite.
-                </h5>
-              </li>
-              <li>
-                <h5>
-                  <i
-                    class="fa fa-check text-secondary mr-3"
-                    aria-hidden="true"
-                  ></i
-                  >Querer sumar un integrante a tu vida por el resto de la suya,
-                  sin importar los cambios que se presenten.
-                </h5>
-              </li>
-              <li>
-                <h5>
-                  <i
-                    class="fa fa-check text-secondary mr-3"
-                    aria-hidden="true"
-                  ></i
-                  >Estar bien predispuesto: te pedimos cargues tu solicitud,
-                  realices una entrevista con el especialistas y respondas a
-                  nuestro contacto.
-                </h5>
-              </li>
-              <li>
-                <h5>
-                  <i
-                    class="fa fa-check text-secondary mr-3"
-                    aria-hidden="true"
-                  ></i
-                  >Comprometerse con el cuidado, la salud y la castración de la
-                  mascota.
-                </h5>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="row px--3">
-              <div class="col-lg-12 p-0">
-                <img
-                  src="https://www.granbanquete.com.ar/files/image/5/5343/642d8f906e3f6_905_510!.jpg?s=26ab69ff4f48342837f6e18cb763fcd2&d=1683853663"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="col-6 p-0">
-                <img
-                  class="img-fluid"
-                  src="https://adopciones.puppis.com.ar/assets/img/foto_requisitos.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="col-6 p-0">
-                <img
-                  class="img-fluid"
-                  src="https://adopciones.puppis.com.ar/assets/img/preguntas.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-      <div class="container-fluid bg-light pt-5 animal-container" id="animal-list">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col py-5 py-lg-0 px-3 px-lg-5" id="search-container">
-              <input type="text" placeholder="Buscar" id="search-box" />
-              <a><img src="https://i.ibb.co/pK4sfrq/pngwing-com-1.png" border="0"></a>
-            </div>
-          </div>
-          <div class="row d-flex" id="animal-cards-container">
-            
-          </div>
-          <div class="text-center my-4">
-            <button class="btn btn-outline-primary load-button" id="load-more-btn">
-              Ver más
-            </button>
-            <button
-              class="btn btn-outline-secondary load-button"
-              id="show-less-btn"
-              style="display: none"
-            >
-              Mostrar menos
-            </button>
-          </div>
-          <div class="loader" id="loader" style="display: none"></div>
-          <div id="no-results" class="text-center" style="display: none">
-            <p>No se encontraron animales con ese nombre.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container" id="preguntas">
+    <!-- Conócenos Section -->
+    <section class="conocenos-section py-5" id="conocenos">
+      <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-5">
+          <div class="col-md-6 text-center">
             <img
-              src="https://t2.uc.ltmcdn.com/es/posts/6/6/3/los_gatos_reconocen_a_las_personas_51366_orig.jpg"
-              class="img-fluid w-100"
-              alt=""
+              src="/assets/logo.png"
+              alt="Proyecto 4 Patas"
+              class="img-fluid"
             />
           </div>
-          <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
-            <h1 class="display-4 mb-4">
-              <span class="text-primary"
-                >PREGUNTAS FRECUENTES SOBRE ADOPCIÓN DE MASCOTAS</span
-              >
-            </h1>
-            <p class="mb-4">
-              En Puppis conectamos humanos con su mascota. Sabemos la
-              importancia de que no haya ningún animal sin familia y por eso
-              apoyamos y ayudamos a rescatistas y fundaciones todoslos días para
-              lograrlo.
+          <div class="col-md-6">
+            <h2>Conócenos</h2>
+            <p>
+              Somos un equipo de personas impulsadas por la empatía hacia los
+              animales, reconociéndolos como nuestros semejantes debido a su
+              capacidad para experimentar placer, alegría, dolor y sufrimiento.
             </p>
-            <p class="mb-4">
-              Si estás pensando sumar un amigo peludo tenés que saber el
-              compromiso que esto implica.No sólo será tu compañía sino un
-              integrante más de la familia. Por lo que te
-              recomendamosplanifiques bien su llegada, asegúrate que todos estén
-              de acuerdo y que en tu edificio o casa se permitan mascotas. Tené
-              en cuenta los gastos mensuales relacionados, cuidados generales
-              que necesitará para que se encuentre saludable y cómodo y con
-              quién dejarlo en caso de salir de vacaciones.
-            </p>
-            <p class="mb-4">
-              <strong
-                >Te dejamos acá un resumen de las preguntas que recibimos
-                siempre así te ayudamos a prepararte en lo que se viene</strong
-              >
-            </p>
+            <button class="btn btn-vermas rounded-button">Ver Más</button>
           </div>
         </div>
       </div>
+    </section>
 
-      
-
-      <div class="container pt-5">
-        <div class="row pb-3">
-          <div class="col-lg-4 mb-4">
-            <div class="card botder-0 mb-2">
-              <img class="card-img-top" src="" alt="" />
-              <div class="card-body bg-light p-4">
-                <h4 class="card-title text-truncate">Buen servicio!!!!</h4>
-                <div class="d-flex mb-3">
-                  <small class="mr-2"
-                    ><i class="fa fa-user text-muted"></i>Sol Origami</small
-                  >                  
-                </div>
-                <p>Gracias al perfecto servicio, pude conocer a lo que es mi nueva familia</p>
-              </div>
+    <section class="donaciones-section py-5" id="donaciones">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-6 mb-4">
+            <div class="donacion-item">
+              <img src="https://proyecto4patas.org/wp-content/uploads/2023/11/ahora.png" alt="Doná Ahora" class="img-fluid rounded-circle">
+              <button class="btn btn-dona rounded-button">DONÁ AHORA</button>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
-            <div class="card botder-0 mb-2">
-              <img class="card-img-top" src="" alt="" />
-              <div class="card-body bg-light p-4">
-                <h4 class="card-title text-truncate">Me encantó poder darle hogar a lo que ahora es parte de mi familia</h4>
-                <div class="d-flex mb-3">
-                  <small class="mr-2"
-                    ><i class="fa fa-user text-muted"></i>Martin Vitali</small
-                  >                  
-                </div>
-                <p>Y asi fue como conoci a Papita la hermosa gatita que ahora corretea por mi casa</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4">
-            <div class="card botder-0 mb-2">
-              <img class="card-img-top" src="" alt="" />
-              <div class="card-body bg-light p-4">
-                <h4 class="card-title text-truncate">Gran compania</h4>
-                <div class="d-flex mb-3">
-                  <small class="mr-2"
-                    ><i class="fa fa-user text-muted"></i>Matias Marquez</small
-                  >                 
-                </div>
-                <p>Gracias a Puppis pude encontrar al amigo que me compaña mientras hago mis tareas laborales</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4">
-            <div class="card botder-0 mb-2">
-              <img class="card-img-top" src="" alt="" />
-              <div class="card-body bg-light p-4">
-                <h4 class="card-title text-truncate">Kartucho esta muy a gusto</h4>
-                <div class="d-flex mb-3">
-                  <small class="mr-2"
-                    ><i class="fa fa-user text-muted"></i>Mateo Ortiz</small
-                  >                 
-                </div>
-                <p>El gato que adopte llamado Kartucho se siente muy a gusto en la casa, siempre tiene comida disponible</p>
-              </div>
+          <div class="col-md-6 mb-4">
+            <div class="donacion-item">
+              <img  src="https://proyecto4patas.org/wp-content/uploads/2023/11/insumos.png" alt="Doná Insumos" class="img-fluid rounded-circle">
+              <button class="btn btn-insumos rounded-button">DONÁ INSUMOS</button>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div
-        class="container-fluid text-white mt-5 py-5 px-sm-3 px-md-5"
-        style="background: var(--background)"
-      >
-        <div class="row pt-3">
-          <div class="col-lg-4 col-md-12 mb-5">
-            <h1 class="mb-3 display-3 text-capitalize text-white">
-              <span class="text-primary">Puppis</span>
-            </h1>
-            <p class="m-0">
-              ¡Te acompañamos en esta nueva etapa! Conocé un poco más sobre la
-              adopción de perros y la adopción de gatos.
-            </p>
-          </div>
-
-          <div class="col-lg-8 col-md-12">
-            <div class="row">
-              <div class="col-md-4 mb-5">
-                <h5 class="text-primary mb-4">Contacto</h5>
-                <p>
-                  <i class="fa fa-map-marker-alt mr-2">
-                    Quilmes, Buenos Aires.</i
-                  >
-                </p>
-                <p><i class="fa fa-phone-alt mr-2"> 0810-220-2345</i></p>
-                <p>
-                  <i class="fa fa-whatsapp mr-2"> +54-911-6702-6320</i>
-                </p>
-                <div class="d-flex justify-content-start mt-4">
-                  <a
-                    href=""
-                    class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                    style="width: 36px; height: 36px"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a
-                    href=""
-                    class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                    style="width: 36px; height: 36px"
-                    ><i class="fab fa-facebook"></i
-                  ></a>
-                  <a
-                    href=""
-                    class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                    style="width: 36px; height: 36px"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                  <a
-                    href=""
-                    class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                    style="width: 36px; height: 36px"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </div>
-              </div>
-
-              <div class="col-md-4 mb-5">
-                <h5 class="text-primary mb-4">Servicios</h5>
-                <div class="d-flex flex-column justify-content-start">
-                  <a href="#requisitos" class="text-white mb-2"
-                    ><i class="fa fa-angle-right"></i>Requisitos</a
-                  >
-                  <a href="#preguntas" class="text-white mb-2"
-                    ><i class="fa fa-angle-right"></i>Preguntas</a
-                  >
-                  <a href="#Animal-List" class="text-white mb-2"
-                    ><i class="fa fa-angle-right"></i>Adoptar</a
-                  >
-                </div>
-              </div>
-
-              <div class="col-md-4 mb-5">
-                <h5 class="text-primary mb-4">Comentarios</h5>
-                <form action="">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control border-0"
-                      placeholder="Nombre"
-                      name=""
-                      id=""
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="email"
-                      class="form-control border-0"
-                      placeholder="Email"
-                      name=""
-                      id=""
-                    />
-                  </div>
-                  <div class="form-group">
-                    <textarea
-                      class="form-control"
-                      id="exampleFormControlTextarea1"
-                      placeholder="Comentario"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                  <div class="mt-1 d-flex justify-content-end">
-                    <button
-                      class="btn btn-lg btn-primary border-0"
-                      type="submit"
-                    >
-                      Enviar
-                    </button>
-                  </div>
-                </form>
-              </div>
+    <!-- Adoptá Section -->
+    <section class="adopta-section py-5" id="adopta">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center">
+            <div class="donacion-item">
+              <img src="https://proyecto4patas.org/wp-content/uploads/2023/11/Recurso-4.png"
+              alt="Adoptá" class="img-fluid rounded-circle">
+              <button class="btn btn-dona rounded-button">DONÁ AHORA</button>
             </div>
+          </div>
+          <div class="col-md-6">
+            <h2>Adoptá</h2>
+            <p>
+              Al pensar en adoptar, es crucial tener en cuenta diversos factores
+              para garantizar una convivencia armoniosa. Evalúa el espacio
+              disponible en tu hogar, el tiempo que puedes dedicar al juego y
+              paseo, así como los costos asociados con la alimentación, atención
+              veterinaria y cuidado durante las vacaciones. Asegúrate de que tu
+              elección de mascota se ajuste a tu estilo de vida y a la cantidad
+              de tiempo que puedes comprometer.
+            </p>
+            <button class="btn btn-vermas rounded-button">ANTES DE ADOPTAR</button>
+            <button class="btn btn-vermas rounded-button">REQUISITOS</button>
           </div>
         </div>
       </div>
-    </body>
+    </section>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Seguinos en Instagram Section -->
+    <section
+      class="instagram-section py-5 text-center"
+      style="background-color: #fff7f0"
+      id="seguinos"
+    >
+      <div class="container">
+        <h2>Seguinos en Instagram</h2>
+        <button class="btn btn-vermas rounded-button">Ver Más</button>
+      </div>
+    </section>
+
+   
+  <!-- Footer -->
+  <footer class="text-white text-center text-lg-start py-2" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <img src="/assets/logo.png" alt="Proyecto 4 Patas" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Enlaces</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Nosotros</a></li>
+            <li><a href="#" class="text-white">Adoptá</a></li>
+            <li><a href="#" class="text-white">Salvá vidas</a></li>
+            <li><a href="#" class="text-white">Participá</a></li>
+            <li><a href="#" class="text-white">Tienda</a></li>
+            <li><a href="#" class="text-white">Donaciones</a></li>
+            <li><a href="#" class="text-white">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Suscribite</h5>
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Ingresá tu e-mail">
+            </div>
+            <button type="submit" class="btn btn-vermas rounded-button">¡Suscribirme!</button>
+          </form>
+        </div>
+      </div>
+      <div class="text-center">
+        <p>&copy; 2024 Proyecto Puppy Tech | Proyecto de Software</p>
+      </div>
+   </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="scripts.js"></script> -->
   </body>
 </html>
