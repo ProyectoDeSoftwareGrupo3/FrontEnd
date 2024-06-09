@@ -1,0 +1,7 @@
+.sidebar-brand-icon img.icon-img {
+    width: 3em;  /* Ajusta el tamaño según sea necesario */
+    height: 3em; /* Ajusta el tamaño según sea necesario */
+    transform: rotate(-15deg);  /* Mantiene la rotación */
+    display: inline-block;
+    vertical-align: middle; /* Asegura la alineación vertical */
+}

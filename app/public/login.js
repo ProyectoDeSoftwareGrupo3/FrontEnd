@@ -1,7 +1,7 @@
 import { setToken } from './token.js';
 
 const mensajeError = document.getElementsByClassName("error")[0]
-const loginUrl = 'https://localhost:7054/api/Auth/login';
+const loginUrl = 'https://localhost:7052/api/Auth/login';
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -11,10 +11,21 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         password: e.target.elements.password.value
     };
 
-    const res = await login(loginRequest);
-
-    setToken(res.token);
-    window.location.href = '/';
+    try {
+        const res = await login(loginRequest);
+        const decodedToken = jwt_decode(res.token);
+        
+        setToken(res.token);
+        
+        // Check user role and redirect accordingly
+        if (decodedToken.role === 'Administrador') {
+            window.location.href = '/administrador';
+        } else {
+            window.location.href = '/';
+        }
+    } catch (error) {
+        mensajeError.textContent = 'Login failed: ' + error.message;
+    }
 });
 
 async function login(loginRequest) {
