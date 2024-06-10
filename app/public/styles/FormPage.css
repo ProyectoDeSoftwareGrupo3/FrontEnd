@@ -57,23 +57,6 @@ label
     margin-bottom: 10px;
 }
 
-.longTextBox
-{
-    padding: 5px;
-    border-radius: 10px;
-    outline: none;
-    resize: none;
-}
-.shortTextBox
-{
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-}
-
-
-
 .submit-button
 {
     background-color: var(--terciary);
@@ -95,6 +78,13 @@ option
 {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.switch-buttons-container
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 /* Copied things */
 

@@ -20,6 +20,7 @@ app.get("/", (req,res)=> res.sendFile(__dirname + "/pages/index.html"));
 app.get("/login",(req,res)=> res.sendFile(__dirname + "/pages/login.html"));
 app.get("/animalLIst",(req,res)=> res.sendFile(__dirname + "/pages/animalList.html"));
 app.get("/formPage",(req,res)=> res.sendFile(__dirname + "/pages/formPage.html"));
+app.get("/animalTransitForm",(req,res)=> res.sendFile(__dirname + "/pages/animalTransitForm.html"));
 app.get("/administrador",(req,res)=> res.sendFile(__dirname + "/pages/administrador.html"));
 app.get("/tables",(req,res)=> res.sendFile(__dirname + "/pages/tables.html"));
 app.get("/panel",(req,res)=> res.sendFile(__dirname + "/pages/panel.html"));
