@@ -31,7 +31,7 @@
 </head>
 <body>    
     <header>
-       <!-- Navbar -->
+      <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
           <img src="/assets/logo.png" alt="Logo" style="width: 40px" />
@@ -89,8 +89,8 @@
                         </section>                       
                         <section>
                             <form action="" class="row">
-                                <div class="form-group col-6">
-                                    <label for="Personas">Cuantas personas hay en tu hogar?</label>
+                                <div class="form-group col-12">
+                                    <label for="Personas">¿Cuántas personas viven contigo?</label>
                                     <select name="Personas" class="form-select" aria-label="Default select example">                                        
                                         <option selected value="1">1</option>
                                         <option value="2">2</option>
@@ -104,14 +104,14 @@
                                         <option value="10">10</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-2">
-                                    <label for="Ninos">Hay niños?</label>
+                                <div class="form-group col-6">
+                                    <label for="Ninos">¿Tienes niños en casa?</label>
                                     <select name="Ninos" class="form-select" aria-label="Default select example" id="Ninos">                                        
                                         <option selected value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
                                 </div> 
-                                <div class="form-group col-4">
+                                <div class="form-group col-6">
                                     <label for="Ninos">Cuales son sus edades?</label>
                                     <select name="Ninos" class="form-select" aria-label="Default select example" id="NinosEdad" disabled>                                        
                                         <option selected value="1">1</option>
@@ -128,53 +128,31 @@
                                         <option value="12">12</option>
                                     </select>
                                 </div>
-                                <div class="form-group row col-4">
-                                    <p>¿Hay otros animales?</p>
-                                    <div class="form-check offset-1">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="animalSi" >
-                                        <label class="form-check-label" for="animalSi">
-                                        SI
-                                        </label>
-                                    </div>
-                                    <div class="form-check offset-1">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="animalNo" checked>
-                                        <label class="form-check-label" for="animalNo">
-                                        NO
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row col-4">
-                                    <p>Estan vacunados?</p>
-                                    <div class="form-check offset-1">
-                                        <input class="form-check-input" type="radio" name="vacunado" id="vacunadoSi" disabled>
-                                        <label class="form-check-label" for="vacunadoSi">
-                                        SI
-                                        </label>
-                                    </div>
-                                    <div class="form-check offset-1">
-                                        <input class="form-check-input" type="radio" name="vacunado" id="vacunadoNo" disabled>
-                                        <label class="form-check-label" for="vacunadoNo">
-                                        NO
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row col-4">
-                                    <p>Estan castrados?</p>
-                                    <div class="form-check offset-1">
-                                        <input class="form-check-input" type="radio" name="castrado" id="castradoSi" disabled>
-                                        <label class="form-check-label" for="castradoSi">
-                                        SI
-                                        </label>
-                                    </div>
-                                    <div class="form-check offset-1">
-                                        <input class="form-check-input" type="radio" name="castrado" id="castradoNo" disabled>
-                                        <label class="form-check-label" for="castradoNo">
-                                        NO
-                                        </label>
-                                    </div>
-                                </div>                      
+                                <div class="switch-buttons-container">                                  
+                                    <div class="form-group col-4">   
+                                      <p>¿Hay otras mascotas en tu hogar?</p>                                 
+                                      <div class="form-check form-switch">   
+                                        <label class="form-check-label" for="animal"></label>                                     
+                                        <input class="form-check-input" type="checkbox" id="animal">                                        
+                                      </div>                                                                       
+                                  </div>
+                                  <div class="form-group col-4">
+                                      <p>¿Tus mascotas están vacunadas?</p>                                    
+                                      <div class="form-check form-switch">                                      
+                                        <input class="form-check-input" type="checkbox" name="vacunado" id="vacunado" disabled>
+                                        <label class="form-check-label" for="vacunado"></label>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-4">
+                                      <p>¿Tus mascotas están castradas?</p>                                    
+                                      <div class="form-check form-switch">                                      
+                                        <input class="form-check-input" type="checkbox" name="castrado" id="castrado" disabled>
+                                        <label class="form-check-label" for="castrado"></label>
+                                      </div>
+                                  </div>
+                                </div>                                                      
                                 <div class="form-group col-6">
-                                    <label for="Lugar">Donde vivira el animal adoptado?</label>
+                                    <label for="Lugar">¿Dónde vivirá el animal que quieres adoptar?</label>
                                     <select name="Lugar" class="form-select" aria-label="Default select example">                                        
                                         <option selected value="Casa">Casa</option>
                                         <option value="Departamento">Departamento</option>
@@ -183,14 +161,14 @@
                                     </select>
                                 </div>      
                                 <div class="form-group col-6">
-                                    <label for="ProOInq">Propietario o inquilino?</label>
+                                    <label for="ProOInq">¿Eres propietario o inquilino de tu casa?</label>
                                     <select name="ProOInq" class="form-select" aria-label="Default select example">                                        
                                         <option selected value="Propietario">Propietario</option>
                                         <option value="Inquilino">Inquilino</option>
                                     </select>
                                 </div>       
                                 <div class="form-group col-6">
-                                    <label for="EspacioLibre">Posees un espacio al aire libre?</label>
+                                    <label for="EspacioLibre">¿Tienes un espacio al aire libre en tu hogar?</label>
                                     <select name="EspacioLibre" class="form-select" aria-label="Default select example">                                        
                                         <option selected value="Patio">Patio</option>
                                         <option value="Terraza">Terraza</option>
@@ -199,7 +177,7 @@
                                     </select>
                                 </div>  
                                 <div class="form-group col-6">
-                                    <label for="Razon">Por que queres adoptar el animal?</label>
+                                    <label for="Razon">¿Por qué quieres adoptar a este animal?</label>
                                     <select name="Razon" class="form-select" aria-label="Default select example">                                        
                                         <option selected value="Compania">Compañia</option>
                                         <option value="Seguridad">Seguridad</option>
@@ -207,7 +185,7 @@
                                     </select>
                                 </div>    
                                 <div class="form-group col-6">
-                                    <label for="HorasSolo">¿Cuántas horas estimas que el animal estará solo en la propiedad?</label>
+                                    <label for="HorasSolo">¿Cuántas horas crees que el animal estará solo en casa?</label>
                                     <select name="HorasSolo" class="form-select" aria-label="Default select example">                                        
                                         <option selected value="0">0 Horas</option>
                                         <option value="1">1 Hora</option>
@@ -226,7 +204,7 @@
                                     </select>
                                 </div>   
                                 <div class="form-group col-6">
-                                    <label for="Paseo">Cuantas veces podras sacarlo a pasear por dia?</label>
+                                    <label for="Paseo">¿Cuántas veces al día podrás sacarlo a pasear?</label>
                                     <select name="Paseo" class="form-select" aria-label="Default select example">                                        
                                         <option selected value="0">0</option>
                                         <option value="1">1</option>
