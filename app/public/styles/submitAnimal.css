@@ -1,0 +1,64 @@
+.modal
+{
+    height: 100vh;
+}
+/* Custom styles for Proyecto 4 Patas */
+:root {
+    --primary: #FFEBE0;
+    --secondary: #FFFFFF;
+    --terciary: #384861;
+    --cuartiary: #CC8E22;
+    --quintary: #39ABA0;
+}
+
+body {
+    font-family: Barlow, Sans-serif;    
+}
+main
+{
+    background-color: var(--secondary);
+}
+
+.form-container
+{
+    border-radius: 10px;
+    padding: 10px;   
+    background-color: var(--primary);
+    box-shadow: 0px 0px 6px gray;
+}
+label
+{
+    margin: 10px;
+}
+
+.submit-button
+{
+    background-color: var(--terciary);
+    margin-top: 10px;
+    border-radius: 50px;
+    padding: 5px;
+    color: white;
+    border: none;
+}
+.submit-button:hover
+{
+    background-color: var(--secondary);
+    color: black;
+}
+
+input
+{
+    border: none;
+}
+
+.modal-header
+{
+    display: flex;
+    justify-content: space-around;
+    border: none;
+}
+.modal-bottom
+{
+    display: flex;
+    justify-content: center;    
+}
