@@ -29,5 +29,6 @@ app.get("/panel",(req,res)=> res.sendFile(__dirname + "/pages/panel.html"));
 app.get("/denuncia-el-maltrato",(req,res)=> res.sendFile(__dirname + "/pages/denuncia-el-maltrato.html"));
 app.get("/contacto",(req,res)=> res.sendFile(__dirname + "/pages/contacto.html"));
 app.get("/donaciones",(req,res)=> res.sendFile(__dirname + "/pages/donaciones.html"));
+app.get("/transito",(req,res)=> res.sendFile(__dirname + "/pages/transito.html"));
 
 
