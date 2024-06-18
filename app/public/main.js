@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('authToken'); // Asegúrate de que 'token' es la clave que usas
 
     if (token) {
-        authLink.innerHTML = '<img id="avatar-navbar" class="avatar-profile" src="assets/profile_new.jpg" alt="Profile">';
+        authLink.innerHTML = '<a title="Cerrar sesión" href="/login">Cerrar sesión </a>';
     } else {
         authLink.innerHTML = '<a title="Inicia sesión" href="/login">Inicia sesión </a>';
     }
