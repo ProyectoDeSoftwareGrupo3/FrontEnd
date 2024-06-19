@@ -98,17 +98,41 @@
                         
                         <div class="row d-flex" id="animal-cards-container">
                             <!-- Animal Cards -->
-                        </div>
-                                <div class="loader" id="loader" style="display: none"></div>                                
-                            <div id="no-results" class="text-center" style="display: none">
-                                <p>No se encontraron animales con ese nombre.</p>
-                        </div>
+                        </div>                                
                     </div>
                 </div>
                 
             </div>        
         </div>
         
+
+      <!-- Modal -->
+      <div class="modal fade" id="animalDetailsModal" tabindex="-1" aria-labelledby="animalDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="animalDetailsModalLabel">Detalles de la Mascota</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="text-center">
+                <img id="animal-image" src="" class="img-fluid" alt="Imagen de la mascota">
+              </div>
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item"><strong>Nombre: </strong><span id="animal-name"></span></li>
+                <li class="list-group-item"><strong>Edad: </strong><span id="animal-age"></span> años</li>
+                <li class="list-group-item"><strong>Género: </strong><span id="animal-gender"></span></li>
+                <li class="list-group-item"><strong>Historia: </strong><span id="animal-history"></span></li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <a href="/formPage">
+              <button type="button" class="btn btn-vermas rounded-button">ADOPTAR</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>        
     </main>
 
     <!-- Footer -->

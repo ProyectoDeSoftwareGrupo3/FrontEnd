@@ -1,3 +1,4 @@
+import { getToken, parseJwt } from "./token.js";
 const apiUrl = 'https://localhost:7052/api/Animal';
 let currentPage = 1;
 const itemsPerPage = 6;
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadAnimals();
   }, 50));
 });
+
+
 
 function loadAnimals() {
   const searchQuery = document.getElementById('search-box').value;
@@ -74,8 +77,8 @@ function showLessAnimals() {
 function renderAnimals(animals) {
   const container = document.getElementById('animal-cards-container');
   container.innerHTML = '';
-  animals.forEach(animal => {
-    const card = document.createElement('div');
+  animals.forEach(animal => {    
+    const card = document.createElement('div');    
     card.classList.add('col-lg-4', 'mb-4', 'd-flex', 'fade-in'); // Add fade-in class for animation
     card.innerHTML = `
       <div class="card border-0 flex-fill d-flex flex-column" type="button" id="animal-card" data-animal='${JSON.stringify(animal)}'>
@@ -181,7 +184,7 @@ function applyFilters() {
     });
 }
 
-function showAnimalDetails(animal) {
+function showAnimalDetails(animal) {  
   const url = `${apiUrl}/${animal.id}`;
   fetch(url)
     .then(response => response.json())
@@ -191,6 +194,7 @@ function showAnimalDetails(animal) {
       document.getElementById('animal-gender').textContent = data.genero ? 'Macho' : 'Hembra';
       document.getElementById('animal-image').src = data.media[0]?.url || 'default-image.jpg';
       document.getElementById('animal-history').textContent = data.historia;
+      document.getElementById('form-url').href = `/formPage?animalId=${animal.id}`;
 
       const modal = new bootstrap.Modal(document.getElementById('animalDetailsModal'));
       modal.show();
