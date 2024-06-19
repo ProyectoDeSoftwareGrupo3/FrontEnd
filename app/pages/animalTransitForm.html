@@ -27,7 +27,7 @@
         media="screen"
         href="/styles/main.css"
     />
-    <script src="/form.js"></script>
+    <script src="/animalTransitForm.js" type="module"></script>
     </head>
 <body>
     <header>
@@ -85,77 +85,76 @@
                             <h2>Tránsito de Animales</h2>
                         </section>                       
                         <section>
-                            <form action="" class="row">                                
+                            <form action="" class="row" id="transitForm">                                
                                 <div class="mb-3 col-12">
                                     <label for="interes" class="form-label">¿Por qué te interesa ser un hogar de acogida temporal para animales?</label>
-                                    <textarea class="form-control" id="interes" rows="3" required></textarea>
+                                    <textarea class="form-control" name="interes" id="interes" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="experiencia" class="form-label">¿Tienes experiencia previa cuidando animales? Si es así, ¿podrías compartir algunos detalles?</label>
-                                    <textarea class="form-control" id="experiencia" rows="3" required></textarea>
+                                    <textarea class="form-control" name="experiencia" id="experiencia" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="cantidadPersonas" class="form-label">¿Cuántas personas viven en tu hogar y cuál es su actitud hacia los animales?</label>
-                                    <textarea class="form-control" id="cantidadPersonas" rows="3" required></textarea>
+                                    <textarea class="form-control" name="cantidadPersonas" id="cantidadPersonas" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="ninos" class="form-label">¿Hay niños en tu casa? Si es así, ¿qué edades tienen?</label>
-                                    <textarea class="form-control" id="ninos" rows="3" required></textarea>
+                                    <textarea class="form-control" name="ninos" id="ninos" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="mascotas" class="form-label">¿Tienes otras mascotas? ¿Cómo crees que reaccionarían a un nuevo animal?</label>
-                                    <textarea class="form-control" id="mascotas" rows="3" required></textarea>
+                                    <textarea class="form-control" name="mascotas" id="mascotas" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="vacunasCastracion" class="form-label">¿Están tus mascotas vacunadas y castradas?</label>
-                                    <textarea class="form-control" id="vacunasCastracion" rows="3" required></textarea>
+                                    <textarea class="form-control" name="vacunasCastracion" id="vacunasCastracion" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="tipoDeEspacio" class="form-label">¿Qué tipo de espacio tienes en tu hogar para el animal (interior, exterior, ambos)?</label>
-                                    <textarea class="form-control" id="espacioLibre" rows="3" required></textarea>
+                                    <textarea class="form-control" name="tipoDeEspacio" id="tipoDeEspacio" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="propiedad" class="form-label">¿Eres propietario o inquilino de tu casa? Si eres inquilino, ¿tu arrendador permite mascotas?</label>
-                                    <textarea class="form-control" id="propiedad" rows="3" required></textarea>
+                                    <textarea class="form-control" name="propiedad" id="propiedad" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="disponibilidadHoraria" class="form-label">¿Cuánto tiempo puedes dedicar diariamente al cuidado y atención del animal?</label>
-                                    <textarea class="form-control" id="disponibilidadHoraria" rows="3" required></textarea>
+                                    <textarea class="form-control" name="disponibilidadHoraria" id="disponibilidadHoraria" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="rutina" class="form-label">¿Cuál es tu rutina diaria y cómo crees que se adaptaría un animal a ella?</label>
-                                    <textarea class="form-control" id="rutina" rows="3" required></textarea>
+                                    <textarea class="form-control" name="rutina" id="rutina" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="emergencia" class="form-label">¿Qué harías en caso de una emergencia veterinaria?</label>
-                                    <textarea class="form-control" id="emergencia" rows="3" required></textarea>
+                                    <textarea class="form-control" name="emergencia" id="emergencia" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="transporte" class="form-label">¿Tienes transporte para llevar al animal al veterinario o a eventos de adopción?</label>
-                                    <textarea class="form-control" id="transporte" rows="3" required></textarea>
+                                    <textarea class="form-control" name="transporte" id="transporte" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="seguimiento" class="form-label">¿Estás dispuesto a colaborar con el seguimiento y las actualizaciones que requiere la organización de adopción?</label>
-                                    <textarea class="form-control" id="seguimiento" rows="3" required></textarea>
+                                    <textarea class="form-control" name="seguimiento" id="seguimiento" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="manejoDelAnimal" class="form-label">¿Estás preparado para manejar el posible estrés o comportamiento problemático de un animal rescatado?</label>
-                                    <textarea class="form-control" id="manejoDelAnimal" rows="3" required></textarea>
+                                    <textarea class="form-control" name="manejoDelAnimal" id="manejoDelAnimal" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="tiempoDeAcogida" class="form-label">¿Cuánto tiempo estás dispuesto a acoger a un animal en tu hogar?</label>
-                                    <textarea class="form-control" id="tiempoDeAcogida" rows="3" required></textarea>
+                                    <textarea class="form-control" name="tiempoDeAcogida" id="tiempoDeAcogida" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="expectativas" class="form-label">¿Qué expectativas tienes al respecto del proceso de adopción y el papel que jugarás en él?</label>
-                                    <textarea class="form-control" id="expectativas" rows="3" required></textarea>
+                                    <textarea class="form-control" name="expectativas" id="expectativas" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label for="politicasDeLaOrganizacion" class="form-label">¿Estás dispuesto a seguir las recomendaciones y políticas de la organización de adopción en cuanto al cuidado del animal?</label>
-                                    <textarea class="form-control" id="politicasDeLaOrganizacion" rows="3" required></textarea>
+                                    <textarea class="form-control" name="politicasDeLaOrganizacion" id="politicasDeLaOrganizacion" rows="3" required></textarea>
                                 </div>                                                                                                                                                            
-                                <button type="button" class="btn btn-primary submit-button" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Enviar</button>                               
+                                <button type="submit" class="btn btn-primary submit-button">Enviar</button>                               
                             </form>
                             <div
         class="modal fade"
@@ -221,7 +220,7 @@
                 <h5>Suscribite</h5>
                 <form>
                     <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Ingresá tu e-mail">
+                    <input type="email" name="email" class="form-control" placeholder="Ingresá tu e-mail">
                     </div>
                     <button type="submit" class="btn btn-vermas rounded-button">¡Suscribirme!</button>
                 </form>

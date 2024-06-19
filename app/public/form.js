@@ -126,7 +126,7 @@ async function fetchAnimalById(animalId)
             }
         return response.json();
     }
-    catch (Error)
+    catch (error)
     {
         console.error('Error fetching data:', error);
     }
