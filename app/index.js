@@ -30,5 +30,6 @@ app.get("/denuncia-el-maltrato",(req,res)=> res.sendFile(__dirname + "/pages/den
 app.get("/contacto",(req,res)=> res.sendFile(__dirname + "/pages/contacto.html"));
 app.get("/donaciones",(req,res)=> res.sendFile(__dirname + "/pages/donaciones.html"));
 app.get("/transito",(req,res)=> res.sendFile(__dirname + "/pages/transito.html"));
+app.get("/create-animals",(req,res)=> res.sendFile(__dirname + "/pages/create-animals.html"));
 
 
