@@ -8,35 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/signUp.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
-    <script type="module" src="/login.js"></script>
+    <script type="module" src="/signUp.js"></script>
 </head>
 
 <body>
     <div class="form-wrapper">
+        <aside class="info-side">
+
+        </aside>
         <main class="form-side">
             <form class="my-form" id="login-form">
                 <div class="form-welcome-row">
-                    <h1>Ingresar a mi cuenta &#128079;</h1>
-                    <h2>Elegí una opción para iniciar sesión</h2>
+                    <h1>Registrar una cuenta &#128079;</h1>     
+                    <p>Registrate para adoptar un nuevo amigo!</p>               
                 </div>
                 <div class="socials-row">
                     <a href="#" title="Use Github">
                         <img src="../assets/google.png" alt="Google">
-                        Inicia sesión con Google
+                        Iniciar sesión con Google
                     </a>
-                </div>
-                <div class="socials-row">
-                    <a href="#" title="Use Apple">
-                        <img src="../assets/apple.png" alt="Apple">
-                        Inicia sesión con Apple
-                    </a>
-                </div>
+                </div>                
                 <div class="divider">
                     <div class="divider-line"></div>
-                    o Iniciar sesión con correo electrónico
+                    O
                     <div class="divider-line"></div>
                 </div>
                 <div class="text-field">
@@ -59,22 +56,56 @@
                     >
                     <div class="error-message">Formato incorrecto.</div>
                 </div>
+                <div class="text-field">
+                    <label for="firstName">Nombre</label>
+                    <input 
+                        type="text" id="firstName" name="firstName"
+                        placeholder="Nombre"
+                        required
+                    >
+                    <div class="error-message">El nombre es necesario</div>
+                </div>
+                <div class="text-field">
+                    <label for="lastName">Apellido</label>
+                    <input 
+                        type="text" id="lastName" name="lastName"
+                        placeholder="Apellido"
+                        required
+                    >
+                    <div class="error-message">El apellido es necesario</div>
+                </div>
+                <div class="text-field">
+                    <label for="address">Dirección</label>
+                    <input 
+                        type="text" id="address" name="address"
+                        placeholder="Dirección"
+                        required
+                    >
+                    <div class="error-message">La dirección es necesaria</div>
+                </div>
+                <div class="text-field">
+                    <label for="city">Ciudad</label>
+                    <input 
+                        type="text" id="city" name="city"
+                        placeholder="Ciudad"
+                        required
+                    >
+                    <div class="error-message">La ciudad es necesaria</div>
+                </div>
                 <button class="my-form__button" type="submit">
-                    Iniciar sesión
+                    Registrarse
                 </button>
                 <div class="my-form__actions">
                     <div class="my-form__row">
-                        <span>¿No tienes una cuenta?</span>
-                        <a href="./signUp" title="Reset Password">
-                            Regístrate ahora
+                        <span>¿Ya tienes una cuenta?</span>
+                        <a href="./login" title="Reset Password">
+                            Inicia Sesión ahora
                         </a>
                     </div>
                 </div>
             </form>
         </main>
-        <aside class="info-side">
-
-        </aside>
+        
     </div>
 </body>
 
