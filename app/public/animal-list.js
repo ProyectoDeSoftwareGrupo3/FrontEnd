@@ -84,7 +84,7 @@ function renderAnimals(animals) {
       <div class="card border-0 flex-fill d-flex flex-column" type="button" id="animal-card" data-animal='${JSON.stringify(animal)}'>
         <div class="card-header position-relative border-0 p-0 mb-4 image-container">
           <img src="${animal.media[0]?.url || 'default-image.jpg'}" class="animal-image" alt="${animal.nombre}" />
-          <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"></div>
+          <div class="position-absolute d-flex flex-column align-items-center justify-content-center"></div>
         </div>
         <div class="card-body text-center p-0 flex-fill d-flex flex-column">
           <ul class="list-group list-group-flush mb-4">

@@ -26,7 +26,13 @@
     type="text/css"
     media="screen"
     href="/styles/main.css"/>
-    <script src="/userProfile.js"></script>
+    <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="/styles/animalList.css"/>
+    <script type="module" src="/userProfile.js"></script>
+    <script type="module" src="/token.js"></script>
 </head>
 <body>
     <header>
@@ -76,31 +82,21 @@
         </nav>
     </header>   
     <main>
-        <div class="container-fluid">
-            <div class="container">
-                <h2>CONTAINER</h2>                
-                <div class="row align-items-center">
-                    <div class="col-6 user-data">
-                        <h2>Alan Vargas</h2>
-                        <h3>Ciudad: Bernal</h3>
-                        <h3>Rol: Administrador</h3>
-                    </div>
-                    <div class="col-6">
-                        <h2>Entrar al Dashboard</h2>
-                    </div>
-                    <div class="animals-container">
-                        <div class="animals-header">
-                            <h3>Animales en Adopcion:</h3>
-                        </div>
-                        
-                        <div class="row d-flex" id="animal-cards-container">
-                            <!-- Animal Cards -->
-                        </div>                                
-                    </div>
+            <div class="container profile-container ">            
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container user-data">
+                    <h1 class="display-4" id="user-name">User Name</h1>
+                    <p class="lead" id="user-localidad">Localidad: </p>
+                    <p class="lead" id="user-email">Email: </p>
                 </div>
-                
-            </div>        
-        </div>
+            </div>
+              <div class="animals-container">
+                <h3>Animales en Adopcion</h3 >
+              <div class="scroll-container" >                
+                <div class="scroll-content" id="animal-cards-container">
+                </div>  
+              </div>     
+            </div>
         
 
       <!-- Modal -->
@@ -124,7 +120,7 @@
             </div>
             <div class="modal-footer">
               <a href="/formPage">
-              <button type="button" class="btn btn-vermas rounded-button">ADOPTAR</button>
+              <!--<button type="button" class="btn btn-vermas rounded-button">ADOPTAR</button>-->
               </a>
             </div>
           </div>

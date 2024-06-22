@@ -26,7 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('authToken'); // Asegúrate de que 'token' es la clave que usas
 
     if (token) {
-        authLink.innerHTML = '<a title="Cerrar sesión" href="/login">Cerrar sesión </a>';
+        authLink.innerHTML = `
+            <ul class="nav nav-tabs">
+       
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bienvenido</a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
+            <li><a class="dropdown-item" href="/administrador">Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/login">Cerrar sesion</a></li>
+            </ul>
+        </li>
+        
+        </ul>
+    `;
     } else {
         authLink.innerHTML = '<a title="Inicia sesión" href="/login">Inicia sesión </a>';
     }
