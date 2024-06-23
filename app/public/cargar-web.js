@@ -4,7 +4,10 @@ document.getElementById("nav-tables").addEventListener("click", function(event) 
     fetch('/tables')
         .then(response => response.text())
         .then(data => {
-            document.getElementById("content-wrapper").innerHTML = data;
+            const contentWrapper = document.getElementById("content-wrapper");
+            contentWrapper.innerHTML = ''; // Limpia el contenido anterior
+            contentWrapper.insertAdjacentHTML('beforeend', data);
+            initializeContent(contentWrapper);  
         })
         .catch(error => console.error('Error al cargar la página:', error));
 });
@@ -14,32 +17,30 @@ document.getElementById("nav-dog").addEventListener("click", function(event) {
 
     fetch('/create-animals')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById("content-wrapper").innerHTML = data;
+        .then(data => {            
+            const contentWrapper = document.getElementById("content-wrapper");
+            contentWrapper.innerHTML = ''; // Limpia el contenido anterior
+            contentWrapper.insertAdjacentHTML('beforeend', data);
+            initializeContent(contentWrapper);  
         })
         .catch(error => console.error('Error al cargar la página:', error));
 });
 
-document.getElementById("nav-panel").addEventListener("click", function(event) {
+document.getElementById("nav-panel").addEventListener("click", async function(event) {
     event.preventDefault(); // Previene la acción por defecto del enlace
-
     fetch('/panel')
         .then(response => response.text())
         .then(data => {
             const contentWrapper = document.getElementById("content-wrapper");
             contentWrapper.innerHTML = ''; // Limpia el contenido anterior
-            contentWrapper.insertAdjacentHTML('beforeend', data);
-
+            contentWrapper.insertAdjacentHTML('beforeend', data);                        
             // Llama a la función de inicialización después de insertar el contenido
-            initializeContent(contentWrapper);
-
-            // Cargar y ejecutar el script de lógica del panel
-            const script = document.createElement('script');
-            script.src = '/tramite.js';
-         document.body.appendChild(script);
+            
+            initializeContent(contentWrapper);                  
+                        
         })
         .catch(error => console.error('Error al cargar la página:', error));
-});
+        });
 
 function initializeContent(container) {
     // Encuentra todos los elementos script dentro del nuevo contenido

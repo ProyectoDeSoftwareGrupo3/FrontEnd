@@ -3,15 +3,21 @@
 import { getToken } from "./token.js";
 
 
-var decodedToken = '';
-import("./token.js")                   // Dynamic import
-    .then(data => { decodedToken = data.getToken() });
+//Necesario para ejecutar el codigo apenas se inserta en /administrador
+executeFunctions();
 
+//Solo funciona si se entra a la pagina /panel
 document.addEventListener('DOMContentLoaded', async () => {
+    
     await getTramiteByMonth();
-    await getTramiteCountPerMonth(new Date().getFullYear());
+    // await getTramiteCountPerMonth(new Date().getFullYear());
 });
 
+async function executeFunctions()
+{
+    await getTramiteByMonth();
+    await getTramiteCountPerMonth(new Date().getFullYear());
+}
 async function getTramiteByMonth() {
     const token = getToken(); // Reemplaza 'TU_TOKEN_BEARER' con el token real
     try {
