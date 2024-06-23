@@ -16,13 +16,14 @@ type="text/css"
 media="screen"
 href="/styles/main.css"
 />
+<script src="./main.js"></script>
 </head>
 
 <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="./">
         <img src="/assets/logo.png" alt="Logo" style="width: 40px" />
       </a>
       <button
@@ -39,7 +40,7 @@ href="/styles/main.css"
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/#conocenos">Nosotros</a>
+            <a class="nav-link" href="#conocenos">Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/adopta">Adoptá</a>
@@ -57,9 +58,10 @@ href="/styles/main.css"
             <a class="nav-link" href="/contacto">Contacto</a>
           </li>
         </ul>
-        <button class="btn btn-vermas rounded-button my-2 my-sm-0" type="button">
+        <button class="btn btn-vermas rounded-button my-2 my-sm-0" id="auth-link" type="button">
           Login
         </button>
+      </a>
       </div>
     </nav>
 

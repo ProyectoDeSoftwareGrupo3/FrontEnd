@@ -197,7 +197,25 @@ function showAnimalDetails(animal) {
       document.getElementById('form-url').href = `/formPage?animalId=${animal.id}`;
 
       const modal = new bootstrap.Modal(document.getElementById('animalDetailsModal'));
+      const formLink = document.getElementById('form-url');
+      if(verifyIfLoggedIn())
+        {
+          formLink.href = './formPage';
+        }
+      else
+      {
+        formLink.href = './login';
+      }
       modal.show();
     })
     .catch(error => console.error('Error fetching animal details:', error));
+}
+
+function verifyIfLoggedIn()
+{
+  if(getToken() != null)
+    {
+      return true;
+    }
+  return false
 }

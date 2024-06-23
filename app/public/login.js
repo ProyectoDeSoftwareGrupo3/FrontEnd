@@ -1,7 +1,7 @@
 import { setToken } from './token.js';
 
 const mensajeError = document.getElementsByClassName("error")[0]
-const loginUrl = 'https://localhost:7054/api/Auth/login';
+const loginUrl = 'https://localhost:7053/api/Auth/login';
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
