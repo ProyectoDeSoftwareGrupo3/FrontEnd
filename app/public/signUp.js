@@ -12,7 +12,7 @@ function setUpListeners()
         let body = createSignUpRequest(formData);
         let response = await sendSignUpRequest(body);
         alert("Registro realizado con exito!");
-        window.location.href = './';                     
+      //  window.location.href = './';                     
     })
     document.getElementById('password').addEventListener('blur', function(e)
             {
@@ -29,17 +29,16 @@ function createSignUpRequest(formData)
         email : formData.get('email'),
         password : formData.get('password'),
         address : formData.get('address'),
-        city : formData.get('city')
+        city : formData.get('city'),
+        role : formData.get('role')
     }
     return data;
 }
 async function sendSignUpRequest(data)
 {
-
-    console.log(data);
     try
     {
-        const response = await fetch(`https://localhost:7053/api/Auth/signup`,        
+        const response = await fetch(`https://localhost:44350/api/Auth/signup`,        
             {
                 method : 'POST',
                 headers : 
@@ -84,17 +83,14 @@ function checkIfPasswordIsValid(passwordInput)
         }
     else if (!specialCharacterRegex.test(password)) 
         {
-            console.log("NEED SPECIAL CHARACTER");
             errorMessage = 'La contraseña debe tener al menos un caracter especial.';
         } 
     else if (!uppercaseRegex.test(password)) 
         {
-            console.log("NEED UPPERCASE CHARACTER");
             errorMessage = 'La contraseña debe tener al menos una letra mayuscula.';
         } 
     else if (!digitRegex.test(password)) 
         {
-            console.log("NEED DIGIT CHARACTER");
             errorMessage = 'La contraseña debe tener al menos un numero.';
         } 
     else 
