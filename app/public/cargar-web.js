@@ -12,19 +12,19 @@ document.getElementById("nav-tables").addEventListener("click", function(event) 
         .catch(error => console.error('Error al cargar la página:', error));
 });
 
-document.getElementById("nav-dog").addEventListener("click", function(event) {
-    event.preventDefault(); // Previene la acción por defecto del enlace
+// document.getElementById("nav-dog").addEventListener("click", function(event) {
+//     event.preventDefault(); // Previene la acción por defecto del enlace
 
-    fetch('/create-animals')
-        .then(response => response.text())
-        .then(data => {            
-            const contentWrapper = document.getElementById("content-wrapper");
-            contentWrapper.innerHTML = ''; // Limpia el contenido anterior
-            contentWrapper.insertAdjacentHTML('beforeend', data);
-            initializeContent(contentWrapper);  
-        })
-        .catch(error => console.error('Error al cargar la página:', error));
-});
+//     fetch('/create-animals')
+//         .then(response => response.text())
+//         .then(data => {            
+//             const contentWrapper = document.getElementById("content-wrapper");
+//             contentWrapper.innerHTML = ''; // Limpia el contenido anterior
+//             contentWrapper.insertAdjacentHTML('beforeend', data);
+//             initializeContent(contentWrapper);  
+//         })
+//         .catch(error => console.error('Error al cargar la página:', error));
+// });
 
 document.getElementById("nav-panel").addEventListener("click", async function(event) {
     event.preventDefault(); // Previene la acción por defecto del enlace
