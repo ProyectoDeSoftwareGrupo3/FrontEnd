@@ -38,7 +38,7 @@ async function sendSignUpRequest(data)
 {
     try
     {
-        const response = await fetch(`https://localhost:7054/api/Auth/signup`,        
+        const response = await fetch(`https://localhost:44350/api/Auth/signup`,        
             {
                 method : 'POST',
                 headers : 

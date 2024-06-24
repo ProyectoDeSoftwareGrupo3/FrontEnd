@@ -119,7 +119,7 @@ async function fetchAnimalById(animalId)
 {
     try
     {
-        const response = await fetch(`https://localhost:7052/api/Animal/${animalId}`);
+        const response = await fetch(`https://localhost:7055/api/Animal/${animalId}`);
         if(!response.ok)
             {
                 throw new Error('Network response was not ok ' + response.statusText);

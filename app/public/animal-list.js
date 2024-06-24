@@ -1,5 +1,5 @@
 import { getToken, parseJwt } from "./token.js";
-const apiUrl = 'https://localhost:7052/api/Animal';
+const apiUrl = 'https://localhost:7055/api/Animal';
 let currentPage = 1;
 const itemsPerPage = 6;
 let allAnimals = [];

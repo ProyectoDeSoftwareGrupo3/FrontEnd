@@ -1,6 +1,6 @@
 import { parseJwt } from './token.js';
 
-const userUrl = 'https://localhost:7054/api/User';
+const userUrl = 'https://localhost:44350/api/User';
 
 
 const toggleMenu = () => {

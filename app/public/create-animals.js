@@ -2,36 +2,46 @@ import { getToken } from "./token.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const adoptionForm = document.getElementById('adoptionForm');
-  
-    adoptionForm.addEventListener('submit', (event) => {
+    console.log(adoptionForm);
+    adoptionForm.addEventListener('submit', function(event) {
       event.preventDefault(); // Evita que el formulario se envíe por defecto
   
-      // Captura de datos del formulario
-      const formData = {
-        razaId: document.getElementById('raza').value,
-        nombre: document.getElementById('name').value,
-        gender: document.getElementById('gender').value,
-        edad: document.getElementById('age').value,      
-        peso: document.getElementById('weight').value, 
-        historia: document.getElementById('story').value,
-      };
-  
-      createAnimal(formData)
+    //   Captura de datos del formulario
+        const formData = new FormData(this);//   
+        let data = createAnimalRequest(formData);
+        let img = new FormData();
+        img.append('foto', formData.get('Foto'));    
+        createAnimal(data, img)
   
     });
 });
 
-async function createAnimal(data){
+function createAnimalRequest(formData)
+{
+    let data = 
+    {
+        razaId: parseInt(formData.get('raza')),
+        nombre: formData.get('name'),
+        genero: formData.get(gender) == 'true' ? true : false,
+        edad: parseInt(formData.get('age')),      
+        peso: parseInt(formData.get('weight')), 
+        historia: formData.get('story'),
+        imageFile: formData.get('image')
+    }
+    return data;
+}
+
+
+async function createAnimal(data, img){
     try {
         const token = getToken(); // Reemplaza 'TU_TOKEN_BEARER' con el token real
         console.log(token)
-        const response = await fetch('https://localhost:7052/api/Animal', {
+        const response = await fetch(`https://localhost:7055/api/Animal?RazaId=${data.razaId}&Nombre=${data.nombre}&Genero=${data.genero}&Edad=${data.edad}&Peso=${data.peso}&Historia=${data.historia}`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+            headers: {                
+                'Authorization': `bearer ${token}`
             },
-            body: JSON.stringify(data)
+            body: img
         });
 
         if (response.status === 201) {
@@ -43,10 +53,12 @@ async function createAnimal(data){
             alert('Error: ' + errorData.message);
             console.error('Error de conflicto:', errorData.message);
         } else {
+            console.log(response);
             alert('Error inesperado: ' + response.status);
             console.error('Error inesperado:', response.status);
         }
     } catch (error) {
+        console.log(response);
         alert('Error en la solicitud');
         console.error('Error en la solicitud:', error);
     }

@@ -134,7 +134,7 @@
         <div class="animals-container">
           <h3>Animales en Adopción</h3>
 
-          <img class="control prev" src="/assets/leftArrow.png" id="prev" alt="" />
+          <img class="control prev" src="/assets/leftArrow.png" alt="" />
           <div class="scroll-container" id="animal-cards-container">
               <div class="col-lg-4 mb-4 d-flex fade-in animalCard'">
                 <div
@@ -161,7 +161,7 @@
               </div>
           </div>
 
-          <img class="control next" src="/assets/rightArrow.png" id="pos" alt="" />
+          <img class="control next" src="/assets/rightArrow.png" alt="" />
         </div>
       </div>
 
@@ -350,15 +350,14 @@
             </div>
             <div class="modal-body">
               <form
-                action="/upload"
-                method="post"
-                enctype="multipart/form-data"
+                action=""                                
                 id="adoptionForm"
+                enctype="multipart/form-data"
               >
 
               <!-- Pet's Type -->
               <div class="input-group mb-3">
-                <label for="age">¿Que animal es? </label>
+                <label for="type">¿Que animal es? </label>
                 <select id="type"
                 name="type"
                 class="form-select"
@@ -410,7 +409,7 @@
 
                 <!-- Pet's Raza -->
                 <div class="input-group mb-3">
-                  <label for="age">Raza: </label>
+                  <label for="raza">Raza: </label>
                   <select id="raza" name="raza" class="form-select"
                   required>
                     <option value="1">Mestizo</option>
@@ -457,12 +456,12 @@
 
                 <!-- Pet's Image -->
                 <div>
-                  <label for="image">Subi una foto de tu mascota:</label>
+                  <label for="Foto">Subi una foto de tu mascota:</label>
                   <input
                     type="file"
                     class="form-control"
-                    id="image"
-                    name="image"
+                    id="Foto"
+                    name="Foto"
                     accept="image/*"
                     required
                   />
@@ -479,12 +478,13 @@
                     
                   />
                 </div>
-              
+                <div class="modal-bottom">
+                  <button type="submit" class="submit-button">Publicar</button>
+                </div>
+              </form>
             </div>
-            <div class="modal-bottom">
-              <button type="submit" class="submit-button">Publicar</button>
-            </div>
-          </form>
+            
+          
           </div>
         </div>
       </div>
@@ -573,3 +573,4 @@
     ></script>
   </body>
 </html>
+

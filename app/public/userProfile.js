@@ -1,8 +1,8 @@
 import { getToken, parseJwt } from './token.js';
 
 
-const apiUrl = 'https://localhost:7052/api/Animal';
-const userUrl = 'https://localhost:7054/api/User';
+const apiUrl = 'https://localhost:7055/api/Animal';
+const userUrl = 'https://localhost:44350/api/User';
 
 let allAnimals = [];
 const user= 
