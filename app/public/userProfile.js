@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 	const decodedToken = parseJwt(token);
 	const userId = decodedToken.uid;
 	loadAnimalsByUser(userId);
-	console.log(userId)
 	const user= await fetchUserDataById(userId);
+	console.log(user);
 	updateUserData(user);
 
 	document.getElementById('userEdit').addEventListener('click', async (event) => {
@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function loadAnimalsByUser(userId) {
 	const url = `${apiUrl}/GetAnimalList?userId=${userId}`;
-	//const noResults = document.getElementById('no-results');
-	//noResults.style.display = 'none'; 
+	const arrowLeft = document.getElementById('prev');
+	const arrowRight = document.getElementById('pos');
   
 	fetch(url)
 	  .then(response => response.json())
@@ -51,13 +51,13 @@ function loadAnimalsByUser(userId) {
 		allAnimals = data;
 		renderAnimals(allAnimals.reverse());
   
-		if (allAnimals.length === 0) {
-		  //noResults.style.display = 'block';
+		if (allAnimals.length <= 2) {
+			arrowLeft.style.display = 'none';
+			arrowRight.style.display = 'none';
 		}
 	  })
 	  .catch(error => {
-		console.error('Error fetching data:', error);
-		//loader.style.display = 'none'; 
+		console.error('Error fetching data:', error); 
 	  });
 }
 
@@ -67,6 +67,7 @@ async function fetchUserDataById(userId) {
         const response = await fetch(`${userUrl}/${userId}`);
         if (response.ok) {
             const data = await response.json();
+			console.log(data);
             return data;
         } else {
             console.error('Error fetching user data:', response.status, response.statusText);
@@ -132,12 +133,7 @@ function renderAnimals(animals) {
 				});
 			});
 		}
-	else
-	{
-		const emptyCard = document.createElement('div');
-		emptyCard.innerHTML = 'No hay ningun animal en adopcion';
-		container.appendChild(emptyCard);
-	}
+0
 	
 }
 

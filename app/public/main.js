@@ -1,3 +1,7 @@
+import { parseJwt } from './token.js';
+
+const userUrl = 'https://localhost:7054/api/User';
+
 
 const toggleMenu = () => {
     const navigation = document.querySelector(".navigation");
@@ -23,10 +27,11 @@ const toggleMenu = () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const authLink = document.getElementById('auth-link');
-    const token = localStorage.getItem('authToken'); // Asegúrate de que 'token' es la clave que usas
-
+    const token = localStorage.getItem('authToken');
     if (token) {
-        authLink.innerHTML = `
+        const user= parseJwt(token);
+        if(user.role === "Administrador"){
+            authLink.innerHTML = `
             <ul class="nav nav-tabs">
        
         <li class="nav-item dropdown">
@@ -41,11 +46,29 @@ document.addEventListener('DOMContentLoaded', function() {
         
         </ul>
     `;
+        }
+        else{
+            authLink.innerHTML = `
+            <ul class="nav nav-tabs">
+       
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bienvenido</a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" id="logout">Cerrar sesion</a></li>
+            </ul>
+        </li>
+        
+        </ul>
+    `;
+        }
+        
+        
     } else {
         authLink.innerHTML = '<a title="Inicia sesión" href="/login">Inicia sesión </a>';
     }
 
-    // Agregar el evento de cerrar sesión si el token existe
     const logoutLink = document.getElementById('logout');
     if (logoutLink) {
         logoutLink.addEventListener('click', function(event) {
@@ -55,3 +78,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
