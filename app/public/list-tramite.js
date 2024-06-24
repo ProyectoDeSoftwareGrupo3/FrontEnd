@@ -1,5 +1,6 @@
 import { getToken } from "./token.js";
 
+let tramitesData = [];
 // document.addEventListener('DOMContentLoaded', function () {
 //     // Función para obtener los datos del endpoint con filtros
 //     async function getTramitesByFilters(tramiteEstadoId, animalId) {
@@ -134,10 +135,12 @@ const listTramites = async () => {
             }
         });
         const tramites = await response.json();
-
+        tramitesData = tramites;
         let content = ``;
         
         tramites.forEach((tramite, index) => {
+            const estado = tramite.estadoResponse.descripcion.toLowerCase();
+            const isEditable = !(estado === 'aprobado' || estado === 'rechazado');
             content += `
             <tr>
             <td>${tramite.id}</td>
@@ -149,8 +152,8 @@ const listTramites = async () => {
             <th>${tramite.usuarioRemitente.lastName}, ${tramite.usuarioRemitente.firstName}</td>
             <th>${tramite.estadoResponse.descripcion}</td>
             <td>
-                <button class="btn btn-sm btn-secondary" data-id="${tramite.id}" data-toggle="modal" data-target="#editStatusModal"><i class="fa-solid fa-pencil"></i></button>
-                <button class="btn btn-sm btn-info" data-id="${tramite.id}" data-toggle="modal" data-target="#detailModal"><i class="fa-solid fa-eye"></i></button>
+                <button class="btn btn-sm btn-secondary edit-button ${isEditable ? '' : 'disabled'}" data-id="${tramite.id}" data-toggle="modal" data-target="#editStatusModal" ${isEditable ? '' : 'disabled'}><i class="fa-solid fa-pencil"></i></button>
+                <button class="btn btn-sm btn-info detail-button" data-id="${tramite.id}" data-toggle="modal" data-target="#detailModal"><i class="fa-solid fa-eye"></i></button>
             </td>
             </tr>
             `
@@ -201,13 +204,16 @@ document.getElementById('saveStatusButton').addEventListener('click', async func
 
     try {
         const token = getToken();
-        const response = await fetch(`https://localhost:7285/api/Tramites/${tramiteId}/UpdateStatus`, {
+        const response = await fetch('https://localhost:7285/api/Tramites/UpdateState', {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ estadoId: newStatus })
+            body: JSON.stringify({ 
+                TramiteId: parseInt(tramiteId, 10), 
+                EstadoId: parseInt(newStatus, 10) 
+            })
         });
 
         if (response.ok) {
@@ -235,34 +241,20 @@ document.addEventListener('click', function(event) {
 });
 
 async function loadTramiteDetails(tramiteId) {
-    try {
-        const token = getToken();
-        const response = await fetch(`https://localhost:7285/api/Tramites/${tramiteId}`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            const tramite = await response.json();
-            displayTramiteDetails(tramite);
-        } else {
-            const errorData = await response.json();
-            alert('Error cargando detalles: ' + errorData.message);
-        }
-    } catch (ex) {
-        alert('Error: ' + ex.message);
+    const tramite = tramitesData.find(t => t.id === parseInt(tramiteId));
+    if (tramite) {
+        displayTramiteDetails(tramite);
+    } else {
+        alert('Trámite no encontrado');
     }
 }
 
 function displayTramiteDetails(tramite) {
     const detailContent = document.getElementById('detailContent');
     detailContent.innerHTML = `
-        <p><strong>ID:</strong> ${tramite.id}</p>
-        <p><strong>Usuario ID:</strong> ${tramite.usuarioId}</p>
-        <p><strong>Usuario Solicitante ID:</strong> ${tramite.usuarioSolicitanteId}</p>
+        <p><strong>N° Tramite:</strong> ${tramite.id}</p>
+        <p><strong>Usuario:</strong> ${tramite.usuarioReceptor.lastName}, ${tramite.usuarioReceptor.firstName}</p>
+        <p><strong>Usuario Solicitante:</strong> ${tramite.usuarioRemitente.lastName}, ${tramite.usuarioRemitente.firstName} </p>
         <p><strong>Fecha de Inicio:</strong> ${formatDate(tramite.fechaInicio)}</p>
         <p><strong>Fecha Final:</strong> ${formatDate(tramite.fechaFinal)}</p>
         <p><strong>Estado:</strong> ${tramite.estadoResponse.descripcion}</p>
