@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 	const userId = decodedToken.uid;
 	loadAnimalsByUser(userId);
 	const user= await fetchUserDataById(userId);
-	console.log(user);
 	updateUserData(user);
 
 	document.getElementById('userEdit').addEventListener('click', async (event) => {
@@ -67,7 +66,6 @@ async function fetchUserDataById(userId) {
         const response = await fetch(`${userUrl}/${userId}`);
         if (response.ok) {
             const data = await response.json();
-			console.log(data);
             return data;
         } else {
             console.error('Error fetching user data:', response.status, response.statusText);
@@ -200,8 +198,6 @@ function editUser(user) {
 }
 
 function normalizeName(name) {
-    name = name.trim();
     name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-
     return name;
 }
