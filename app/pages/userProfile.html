@@ -1,164 +1,575 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto Puppy Tech</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
     />
 
     <script
-        src="https://kit.fontawesome.com/09483aa2b8.js"
-        crossorigin="anonymous"
+      src="https://kit.fontawesome.com/09483aa2b8.js"
+      crossorigin="anonymous"
     ></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
-    <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Barlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRaleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=0055d1cb097aee760dbaaa7857abfcdd" media="all">
-    <link rel="stylesheet" href="/styles/userProfile.css">
     <link
-    rel="stylesheet"
-    type="text/css"
-    media="screen"
-    href="/styles/main.css"/>
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <link
-    rel="stylesheet"
-    type="text/css"
-    media="screen"
-    href="/styles/animalList.css"/>
+      rel="stylesheet"
+      id="google-fonts-1-css"
+      href="https://fonts.googleapis.com/css?family=Barlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRaleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=0055d1cb097aee760dbaaa7857abfcdd"
+      media="all"
+    />
+    <link rel="stylesheet" href="/styles/userProfile.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/styles/main.css"
+    />
+    <link rel="stylesheet" href="/styles/submitAnimal.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/styles/animalList.css"
+    />
     <script type="module" src="/userProfile.js"></script>
     <script type="module" src="/token.js"></script>
-</head>
-<body>
-    <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="/assets/logo.png" alt="Logo" style="width: 40px" />
-            </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/adopta">Adoptá</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/denuncia-el-maltrato">Salvá vidas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/transito">Tránsito</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/donaciones">Donaciones</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/#footer">Contacto</a>
-              </li>
-            </ul>
-            <a href="/login">
-            <button class="btn btn-vermas rounded-button my-2 my-sm-0" type="button">
-              Login
-            </button>
-          </a>
-          </div>
-        </nav>
-    </header>   
-    <main>
-            <div class="container profile-container ">            
-              <div class="jumbotron jumbotron-fluid">
-                <div class="container user-data">
-                    <h1 class="display-4" id="user-name">User Name</h1>
-                    <p class="lead" id="user-localidad">Localidad: </p>
-                    <p class="lead" id="user-email">Email: </p>
-                </div>
-            </div>
-              <div class="animals-container">
-                <h3>Animales en Adopcion</h3 >
-              <div class="scroll-container" >                
-                <div class="scroll-content" id="animal-cards-container">
-                </div>  
-              </div>     
-            </div>
-        
+    <script type="module" src="/create-animals.js"></script>
+    <script src="./main.js"></script>
+  </head>
 
-      <!-- Modal -->
-      <div class="modal fade" id="animalDetailsModal" tabindex="-1" aria-labelledby="animalDetailsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./">
+          <img src="/assets/logo.png" alt="Logo" style="width: 40px" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/adopta">Adoptá</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/denuncia-el-maltrato">Salvá vidas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/transito">Tránsito</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/donaciones">Donaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacto">Contacto</a>
+            </li>
+          </ul>
+          <button class="btn btn-vermas rounded-button my-2 my-sm-0" id="auth-link" type="button">
+            Login
+          </button>
+        </a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container profile-container">
+        <div class="jumbotron jumbotron-fluid">
+          <h5 type="button" id="userEdit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-pencil-square"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
+              />
+            </svg>
+            Editar Perfil
+          </h5>
+          <div class="container user-data">
+            <h1 class="display-4" id="user-name">User Name</h1>
+            <p class="lead" id="user-localidad">Localidad:</p>
+            <p class="lead" id="user-email">Email:</p>
+            <p class="lead" id="user-address">Direccion:</p>
+          </div>
+        </div>
+
+        <div class="animals-container">
+          <h3>Animales en Adopción</h3>
+
+          <img class="control prev" src="/assets/leftArrow.png" alt="" />
+          <div class="scroll-container" id="animal-cards-container">
+              <div class="col-lg-4 mb-4 d-flex fade-in animalCard'">
+                <div
+                  class="card border-0 flex-fill d-flex flex-column default-card"
+                  type="button"
+                >
+                  <div
+                    class="card-header position-relative border-0 p-0 mb-4 image-container"
+                  >
+                    <img src="/assets/addAnimalCard.png" class="animal-image" />
+                  </div>
+                  <div
+                    class="card-body text-center p-0 flex-fill d-flex flex-column"
+                  >
+                    <ul class="list-group list-group-flush mb-4">
+                      <li class="list-group-item p-2">
+                        <i class="fa text-secondary mr-2"
+                          >Click aqui para dar en adopcion</i
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <img class="control next" src="/assets/rightArrow.png" alt="" />
+        </div>
+      </div>
+
+
+      <!-- User Modal -->
+      <div
+        class="modal fade"
+        id="UserEditModal"
+        tabindex="-1"
+        aria-labelledby="UserEditModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content form-container">
+            <div class="modal-header ">
+              <h2 class="modal-title fs-5" id="exampleModalLabel">EDITAR PERFIL</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="editUserForm">
+                <div class="mb-3 row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label"
+                    >Email</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      readonly
+                      class="form-control-plaintext"
+                      id="staticEmail"
+                      value="email@example.com"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="input" class="col-sm-2 col-form-label"
+                    >Nombre</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputNombre"
+                      required
+                      pattern="[A-Za-zÑñáéíóúÁÉÍÓÚ]+"
+                      title="Ingresa un nombre válido"
+                      oninvalid="this.setCustomValidity('Por favor ingresa un nombre válido')"
+                      onchange="this.setCustomValidity('')"
+                      oninput="this.setCustomValidity('')"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="input" class="col-sm-2 col-form-label"
+                    >Apellido</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputApellido"
+                      required
+                      pattern="[A-Za-zÑñáéíóúÁÉÍÓÚ]+"
+                      title="Ingresa un apellido válido"
+                      oninvalid="this.setCustomValidity('Por favor ingresa un apellido válido')"
+                      onchange="this.setCustomValidity('')"
+                      oninput="this.setCustomValidity('')"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="input" class="col-sm-2 col-form-label"
+                    >Direccion</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputDireccion"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="input" class="col-sm-2 col-form-label"
+                    >Localidad</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputLocalidad"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-vermas rounded-button">
+                    Actualizar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animal Modal -->
+      <div
+        class="modal fade"
+        id="animalDetailsModal"
+        tabindex="-1"
+        aria-labelledby="animalDetailsModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content form-container">
             <div class="modal-header">
-              <h5 class="modal-title" id="animalDetailsModalLabel">Detalles de la Mascota</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h2 class="modal-title fs-5" id="exampleModalLabel">DETALLE DE LA MASCOTA</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
               <div class="text-center">
-                <img id="animal-image" src="" class="img-fluid" alt="Imagen de la mascota">
+                <img
+                  id="animal-image"
+                  src=""
+                  class="img-fluid"
+                  alt="Imagen de la mascota"
+                />
               </div>
               <ul class="list-group list-group-flush mt-3">
-                <li class="list-group-item"><strong>Nombre: </strong><span id="animal-name"></span></li>
-                <li class="list-group-item"><strong>Edad: </strong><span id="animal-age"></span> años</li>
-                <li class="list-group-item"><strong>Género: </strong><span id="animal-gender"></span></li>
-                <li class="list-group-item"><strong>Historia: </strong><span id="animal-history"></span></li>
+                <li class="list-group-item item">
+                  <strong>Nombre: </strong><span id="animal-name"></span>
+                </li>
+                <li class="list-group-item item">
+                  <strong>Edad: </strong><span id="animal-age"></span> años
+                </li>
+                <li class="list-group-item item">
+                  <strong>Género: </strong><span id="animal-gender"></span>
+                </li>
+                <li class="list-group-item item">
+                  <strong>Historia: </strong><span id="animal-history"></span>
+                </li>
               </ul>
             </div>
             <div class="modal-footer">
               <a href="/formPage">
-              <!--<button type="button" class="btn btn-vermas rounded-button">ADOPTAR</button>-->
+                <!--<button type="button" class="btn btn-vermas rounded-button">ADOPTAR</button>-->
               </a>
             </div>
           </div>
         </div>
-      </div>        
+      </div>
+
+      <!--Adoption modal-->
+      <div
+        class="modal fade"
+        id="adoptionModal"
+        tabindex="-1"
+        aria-labelledby="adoptionModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content form-container">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="exampleModalLabel">
+                Crear adopción
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                action="/upload"
+                method="post"
+                enctype="multipart/form-data"
+                id="adoptionForm"
+              >
+
+              <!-- Pet's Type -->
+              <div class="input-group mb-3">
+                <label for="age">¿Que animal es? </label>
+                <select id="type"
+                name="type"
+                class="form-select"
+                required>
+                  <option value="1">Perro</option>
+                  <option value="2">Gato</option>  
+                  class="form-select"
+                    required               
+              </select>
+              </div>
+                <!-- Pet's Name -->
+                <div class="input-group mb-3">
+                  <label for="name">Nombre de la mascota: </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <!-- Pet's Age -->
+                <div class="input-group mb-3">
+                  <label for="age">Edad de la mascota: </label>
+                  <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="0"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <!-- Pet's weight -->
+                <div class="input-group mb-3">
+                  <label for="weight">Peso de la mascota: </label>
+                  <input
+                    type="number"
+                    id="weight"
+                    name="weight"
+                    min="0"
+                    step="0.01"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <!-- Pet's Raza -->
+                <div class="input-group mb-3">
+                  <label for="age">Raza: </label>
+                  <select id="raza" name="raza" class="form-select"
+                  required>
+                    <option value="1">Mestizo</option>
+                    <option value="2">Otro</option>
+                    <option value="3">Labrador Retriever</option>
+                    <option value="4">Bulldog</option>
+                    <option value="5">Beagle</option>
+                    <option value="6">Caniche</option>
+                    <option value="7">Pastor Aleman</option>
+                    <option value="8">Golden Retriever</option>
+                    <option value="9">Chihuahua</option>
+                    <option value="10">Boxer</option>
+                    c
+                </select>
+                </div>
+
+                <!-- Pet's Gender -->
+                <div class="input-group mb-3">
+                  <label for="gender">Genero de la mascota: </label>
+                  <select
+                    id="gender"
+                    name="gender"
+                    class="form-select"
+                    required
+                  >
+                    <option selected>Seleccionar</option>
+                    <option value=true>Macho</option>
+                    <option value=false>Hembra</option>
+                  </select>
+                </div>
+
+                <!-- Pet's Story -->
+                <div>
+                  <label for="story">Historia de la mascota:</label>
+                  <textarea
+                    id="story"
+                    name="story"
+                    rows="4"
+                    cols="50"
+                    class="form-control"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Pet's Image -->
+                <div>
+                  <label for="image">Subi una foto de tu mascota:</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="image"
+                    name="image"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+                <!-- Pet's Video -->
+                <div>
+                  <label for="video">Subi un video de tu mascota:</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="video"
+                    name="video"
+                    accept="video/*"
+                    
+                  />
+                </div>
+              
+            </div>
+            <div class="modal-bottom">
+              <button type="submit" class="submit-button">Publicar</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <!--Confirmation modal-->
+      <div
+        class="modal fade"
+        id="ConfirmationModal"
+        tabindex="-1"
+        aria-labelledby="ConfirmationModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">Sistema</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Datos actualizados correctamente, la pagina se recargara
+                automaticamente en 3 segundos
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="text-white text-center text-lg-start py-2" id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <img src="/assets/logo.png" alt="Proyecto 4 Patas" class="img-fluid">
-            </div>
-            <div class="col-md-4 mb-4">
-              <h5>Enlaces</h5>
-              <ul class="list-unstyled">
-                <li><a href="/" class="text-white">Nosotros</a></li>
-                <li><a href="/adopta" class="text-white">Adoptá</a></li>
-                <li><a href="/denuncia-el-maltrato" class="text-white">Salvá vidas</a></li>
-                <li><a href="/transito" class="text-white">Tránsito</a></li>
-                <li><a href="/donaciones" class="text-white">Donaciones</a></li>
-                <li><a href="/contacto" class="text-white">Contacto</a></li>
-              </ul>
-            </div>
-            <div class="col-md-4 mb-4">
-              <h5>Suscribite</h5>
-              <form>
-                <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Ingresá tu e-mail">
-                </div>
-                <button type="submit" class="btn btn-vermas rounded-button">¡Suscribirme!</button>
-              </form>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <img
+              src="/assets/logo.png"
+              alt="Proyecto 4 Patas"
+              class="img-fluid"
+            />
           </div>
-          <div class="text-center">
-            <p>&copy; 2024 Proyecto Puppy Tech | Proyecto de Software</p>
+          <div class="col-md-4 mb-4">
+            <h5>Enlaces</h5>
+            <ul class="list-unstyled">
+              <li><a href="/" class="text-white">Nosotros</a></li>
+              <li><a href="/adopta" class="text-white">Adoptá</a></li>
+              <li>
+                <a href="/denuncia-el-maltrato" class="text-white"
+                  >Salvá vidas</a
+                >
+              </li>
+              <li><a href="/transito" class="text-white">Tránsito</a></li>
+              <li><a href="/donaciones" class="text-white">Donaciones</a></li>
+              <li><a href="/contacto" class="text-white">Contacto</a></li>
+            </ul>
           </div>
-       </footer>
-</body>
+          <div class="col-md-4 mb-4">
+            <h5>Suscribite</h5>
+            <form>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Ingresá tu e-mail"
+                />
+              </div>
+              <button type="submit" class="btn btn-vermas rounded-button">
+                ¡Suscribirme!
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="text-center">
+          <p>&copy; 2024 Proyecto Puppy Tech | Proyecto de Software</p>
+        </div>
+      </div>
+    </footer>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -97,7 +97,7 @@
         <div class="search-container">
           <input type="text" placeholder="Buscar" id="search-box" />
           <a><img src="https://i.ibb.co/pK4sfrq/pngwing-com-1.png" border="0"></a>
-          <button class="btn btn-vermas rounded-button" id="filter-btn" onclick="toggleFilters()">
+          <button class="btn btn-vermas rounded-button" id="filter-btn" >
             Filtros
           </button>
         </div>
@@ -128,9 +128,13 @@
               <option value="gato">Gato</option>
             </select>
           </div>
+          <div class="col-md-3">
+            <label for="age-filter">Localidad:</label>
+            <input type="text" id="city-filter" class="form-control" placeholder="Ej. Florencio Varela">
+          </div>
         </div>
         <div class="text-center my-4 filters-container">
-          <button class="btn btn-vermas rounded-button" onclick="applyFilters()">Aplicar Filtros</button>
+          <button class="btn btn-vermas rounded-button" id="apply-filters">Aplicar Filtros</button>
         </div>
       </div>
       <div class="row d-flex" id="animal-cards-container">

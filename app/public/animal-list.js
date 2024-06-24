@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     showLessAnimals();
   });
 
+  document.getElementById('filter-btn').addEventListener('click', () => {
+    toggleFilters();
+  });
+
+  document.getElementById('apply-filters').addEventListener('click', () => {
+    applyFilters();
+  });
+
   document.getElementById('search-box').addEventListener('input', debounce(() => {
     loadAnimals();
   }, 50));
@@ -145,7 +153,7 @@ function applyFilters() {
   const age = document.getElementById('age-filter').value;
   const gender = document.getElementById('gender-filter').value;
   const type = document.getElementById('type-filter').value;
-
+  const city = document.getElementById('city-filter').value;
 
   const searchQuery = document.getElementById('search-box').value;
 
@@ -153,6 +161,7 @@ function applyFilters() {
 
   if (weight) url += `&peso=${weight}`;
   if (age) url += `&edad=${age}`;
+  if (city) url += `&localidad=${city}`;
   if (gender !== '') url += `&genero=${gender === 'macho' ? 'true' : 'false'}`;
   if (type !== '') url += `&tipoId=${type  === 'perro' ? 1 : 2}`;
 

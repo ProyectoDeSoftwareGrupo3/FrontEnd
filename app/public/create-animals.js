@@ -1,21 +1,31 @@
 import { getToken } from "./token.js";
 
-document.getElementById('createAnimalForm').addEventListener('submit', async function (event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const data = {
-        RazaId: form.razaId.value,
-        Nombre: form.nombre.value,
-        Genero: form.genero.value === 'true',
-        Edad: form.edad.value,
-        Peso: form.peso.value,
-        Historia: form.historia.value
-    };
+document.addEventListener('DOMContentLoaded', () => {
+    const adoptionForm = document.getElementById('adoptionForm');
+  
+    adoptionForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Evita que el formulario se envíe por defecto
+  
+      // Captura de datos del formulario
+      const formData = {
+        razaId: document.getElementById('raza').value,
+        nombre: document.getElementById('name').value,
+        gender: document.getElementById('gender').value,
+        edad: document.getElementById('age').value,      
+        peso: document.getElementById('weight').value, 
+        historia: document.getElementById('story').value,
+      };
+  
+      createAnimal(formData)
+  
+    });
+});
 
+async function createAnimal(data){
     try {
         const token = getToken(); // Reemplaza 'TU_TOKEN_BEARER' con el token real
-        const response = await fetch('https://localhost:7055/api/Animal', {
+        console.log(token)
+        const response = await fetch('https://localhost:7052/api/Animal', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,4 +50,4 @@ document.getElementById('createAnimalForm').addEventListener('submit', async fun
         alert('Error en la solicitud');
         console.error('Error en la solicitud:', error);
     }
-});
+}

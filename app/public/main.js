@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li><a class="dropdown-item" href="/userProfile">Mi Perfil</a></li>
             <li><a class="dropdown-item" href="/administrador">Dashboard</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/login">Cerrar sesion</a></li>
+            <li><a class="dropdown-item" id="logout">Cerrar sesion</a></li>
             </ul>
         </li>
         
@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (logoutLink) {
         logoutLink.addEventListener('click', function(event) {
             event.preventDefault();
-            localStorage.removeItem('token'); // Elimina el token
-            window.location.href = 'login.html'; // Redirige a la página de inicio de sesión
+            localStorage.removeItem('authToken'); 
+            window.location.href = '/'; 
         });
     }
 });
