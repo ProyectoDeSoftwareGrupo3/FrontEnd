@@ -91,9 +91,9 @@ const dataTableOptions = {
     destroy: true,
     language: {
         lengthMenu: "Mostrar _MENU_ registros por página",
-        zeroRecords: "Ningún usuario encontrado",
+        zeroRecords: "Ningún tramite encontrado",
         info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
-        infoEmpty: "Ningún usuario encontrado",
+        infoEmpty: "Ningún tramite encontrado",
         infoFiltered: "(filtrados desde _MAX_ registros totales)",
         search: "Buscar:",
         loadingRecords: "Cargando...",
@@ -144,9 +144,9 @@ const listTramites = async () => {
             content += `
             <tr>
             <td>${tramite.id}</td>
-            <th>${tramite.adopcionResponse.animalResponse.nombre}</td>
-            <th>${tramite.adopcionResponse.animalResponse.raza.tipo.descripcion}</td>
-            <th>${tramite.adopcionResponse.animalResponse.raza.descripcion}</td>
+            <th>${tramite.adopcionResponse ? tramite.adopcionResponse.animalResponse.nombre : '-'}</td>
+            <th>${tramite.adopcionResponse ? tramite.adopcionResponse.animalResponse.raza.tipo.descripcion : '-'}</td>
+            <th>${tramite.adopcionResponse ? tramite.adopcionResponse.animalResponse.raza.descripcion : '-'}</td>
             <th>${formatDate(tramite.fechaInicio)}</td>
             <th>${tramite.usuarioReceptor.lastName}, ${tramite.usuarioReceptor.firstName}</td>
             <th>${tramite.usuarioRemitente.lastName}, ${tramite.usuarioRemitente.firstName}</td>
