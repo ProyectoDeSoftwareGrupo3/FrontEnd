@@ -164,9 +164,14 @@ const listTramites = async () => {
         alert(ex);
     }
 }
-window.addEventListener("load", async () => {
+// window.addEventListener("load", async () => {
+//     await initDataTable();
+// });
+initializeWindow();
+async function initializeWindow()
+{
     await initDataTable();
-});
+}
 
 function formatDate(dateString) {
     // Crear un objeto de fecha a partir de la cadena de fecha
