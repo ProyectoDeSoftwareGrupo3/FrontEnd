@@ -22,7 +22,15 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" src="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.min.css"></link>
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+/>
 </head>
 
 <body id="page-top">
@@ -35,7 +43,7 @@
                     <p class="mb-4">Las solicitudes de adopción se encuentran por orden de prioridad.</p>
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <!-- <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div>
@@ -68,11 +76,83 @@
                                 </table>
                             </div>
                         </div>
+                    </div> -->
+
+                    <div class="container my-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <table id="datatable_users" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Animal</th>
+                                            <th>Tipo</th>
+                                            <th>Raza</th>
+                                            <th>Fecha Inicio</th>
+                                            <th>Usuario</th>
+                                            <th>Usuario Adoptante</th>
+                                            <th>Estado</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody_users"></tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
                 <!-- /.container-fluid -->
+                <div class="modal fade" id="editStatusModal" tabindex="-1" aria-labelledby="editStatusModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="editStatusModalLabel">Actualizar Estado</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="editStatusForm">
+                            <div class="form-group">
+                              <label for="statusSelect">Estado</label>
+                              <select class="form-control" id="statusSelect" required>>
+                                <option value="1">Aprobado</option>
+                                <option value="2">Rechazado</option>
+                              </select>
+                            </div>
+                            <input type="hidden" id="tramiteId">
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-primary" id="saveStatusButton">Guardar cambios</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
 
+                <!-- Modal para Detalles -->
+                <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="detailModalLabel">Detalles del Trámite</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <div id="detailContent">
+                            <!-- Aquí se cargarán los detalles del trámite -->
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
           
 
     </div>
@@ -101,7 +181,9 @@
     <script src="/js/demo/datatables-demo.js"></script>
 
     <script src="/list-tramite.js" type="module"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js"></script>
 </body>
 
 </html>
