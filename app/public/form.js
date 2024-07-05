@@ -69,7 +69,7 @@ async function createAdoptionRequest(formData)
     let data = 
     {
         usuarioId: "19BB7F59-3372-433F-B343-00E75953D3A3",
-        usuarioAdoptanteId: parsedToken.uid,
+        usuarioSolicitanteId: parsedToken.uid,
         animalId: parseInt(animalId),
         cantidadPersonas: parseInt(formData.get("Personas")),
         hayChicos: formData.get("Ninos") == "Si" ? true : false,
@@ -105,11 +105,12 @@ async function sendAdoptionRequest(data)
             });
         if(!response.ok)
             {
+                console.log(response);
                 throw new Error('Network response was not ok ' + response.statusText);
             }
         return response.json();
     }
-    catch (Error)
+    catch (error)
     {
         console.error('Error fetching data:', error);
     }    

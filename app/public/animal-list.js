@@ -43,7 +43,7 @@ function loadAnimals() {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      allAnimals = data;
+      allAnimals = data;      
       currentPage = 1;
       displayedAnimals = allAnimals.slice(0, itemsPerPage);
       renderAnimals(displayedAnimals);
@@ -209,7 +209,7 @@ function showAnimalDetails(animal) {
       const formLink = document.getElementById('form-url');
       if(verifyIfLoggedIn())
         {
-          formLink.href = './formPage';
+          formLink.href = `./formPage?animalId=${animal.id}`;
         }
       else
       {
